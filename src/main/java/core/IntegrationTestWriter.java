@@ -91,41 +91,41 @@ public class IntegrationTestWriter {
         return variables;
     }
 
-    private static List<Map<String, Object>> generateOperation(EntityTestIntegrationVO entity) {
+    private static List<Map<String, Object>> generateOperation(EntityTestIntegrationVO entity, ServerApplicationConfigVO serverConfig) {
         String operation = "";
 
         operation = "Get All";
         Map<String, Object> getAll = new LinkedHashMap<String, Object>();
         getAll.put("name", "Get All " + entity.getEntityName());
-        getAll.put("event", generateEventFromHttpRequest(operation, entity.getPrimaryKeyName()));
+        getAll.put("event", generateEventFromHttpRequest(operation, entity.getPrimaryKeyName(), serverConfig));
         getAll.put("request", generateRequestHttp(entity, "GET", operation));
         getAll.put("response", Arrays.asList(""));
 
         operation = "Get One";
         Map<String, Object> getOne = new LinkedHashMap<String, Object>();
         getOne.put("name", "Get One " + entity.getEntityName());
-        getOne.put("event", generateEventFromHttpRequest(operation, entity.getPrimaryKeyName()));
+        getOne.put("event", generateEventFromHttpRequest(operation, entity.getPrimaryKeyName(), serverConfig));
         getOne.put("request", generateRequestHttp(entity, "GET", operation));
         getOne.put("response", Arrays.asList(""));
 
         operation = "Add";
         Map<String, Object> add = new LinkedHashMap<String, Object>();
         add.put("name", "Add " + entity.getEntityName());
-        add.put("event", generateEventFromHttpRequest(operation, entity.getPrimaryKeyName()));
+        add.put("event", generateEventFromHttpRequest(operation, entity.getPrimaryKeyName(), serverConfig));
         add.put("request", generateRequestHttp(entity, "POST", operation));
         add.put("response", Arrays.asList(""));
 
         operation = "Update";
         Map<String, Object> update = new LinkedHashMap<String, Object>();
         update.put("name", "Update " + entity.getEntityName());
-        update.put("event", generateEventFromHttpRequest(operation, entity.getPrimaryKeyName()));
+        update.put("event", generateEventFromHttpRequest(operation, entity.getPrimaryKeyName(), serverConfig));
         update.put("request", generateRequestHttp(entity, "PUT", operation));
         update.put("response", Arrays.asList(""));
 
         operation = "Delete";
         Map<String, Object> delete = new LinkedHashMap<String, Object>();
         delete.put("name", "Delete " + entity.getEntityName());
-        delete.put("event", generateEventFromHttpRequest(operation, entity.getPrimaryKeyName()));
+        delete.put("event", generateEventFromHttpRequest(operation, entity.getPrimaryKeyName(), serverConfig));
         delete.put("request", generateRequestHttp(entity, "DELETE", operation));
         delete.put("response", Arrays.asList(""));
 
@@ -194,12 +194,12 @@ public class IntegrationTestWriter {
         return header;
     }
 
-    private static List<Map<String, Object>> generateEventFromHttpRequest(String operation, String primaryKeyName) {
+    private static List<Map<String, Object>> generateEventFromHttpRequest(String operation, String primaryKeyName, ServerApplicationConfigVO serverConfig) {
         List<Map<String, Object>> events = new ArrayList<Map<String, Object>>();
 
         Map<String, Object> eventTest = new LinkedHashMap<String, Object>();
         eventTest.put("listen", "test");
-        eventTest.put("script", generateScriptFromEvent(operation, primaryKeyName));
+        eventTest.put("script", generateScriptFromEvent(operation, primaryKeyName, serverConfig));
         events.add(eventTest);
 
         Map<String, Object> eventPrerequest = new LinkedHashMap<String, Object>();
@@ -211,7 +211,7 @@ public class IntegrationTestWriter {
         return events;
     }
 
-    private static Map<String, Object> generateScriptFromEvent(String operation, String primaryKeyName) {
+    private static Map<String, Object> generateScriptFromEvent(String operation, String primaryKeyName, ServerApplicationConfigVO serverConfig) {
         Map<String, Object> script = new LinkedHashMap<String, Object>();
         script.put("id", generateId());
 
@@ -220,8 +220,8 @@ public class IntegrationTestWriter {
                     "pm.test(\"Status code is 200\", function () {",
                     "    pm.response.to.have.status(200);",
                     "});",
-                    "pm.test(\"Response time is less than 500ms\", function () {",
-                    "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                    "pm.test(\"Response time is less than "+serverConfig.getTimeOutRequest()+"ms\", function () {",
+                    "    pm.expect(pm.response.responseTime).to.be.below("+serverConfig.getTimeOutRequest()+");",
                     "});",
                     "var jsonData = pm.response.json();",
                     "var projectKeys = [];",
@@ -247,8 +247,8 @@ public class IntegrationTestWriter {
                     "pm.test(\"Status code is 200\", function () {",
                     "    pm.response.to.have.status(200);",
                     "});",
-                    "pm.test(\"Response time is less than 500ms\", function () {",
-                    "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                    "pm.test(\"Response time is less than "+serverConfig.getTimeOutRequest()+"ms\", function () {",
+                    "    pm.expect(pm.response.responseTime).to.be.below("+serverConfig.getTimeOutRequest()+");",
                     "});",
                     "",
                     "pm.environment.set('dynamicBody', JSON.parse(responseBody));",
@@ -261,8 +261,8 @@ public class IntegrationTestWriter {
                     "pm.test(\"Status code is 200\", function () {",
                     "    pm.response.to.have.status(200);",
                     "});",
-                    "pm.test(\"Response time is less than 500ms\", function () {",
-                    "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                    "pm.test(\"Response time is less than "+serverConfig.getTimeOutRequest()+"ms\", function () {",
+                    "    pm.expect(pm.response.responseTime).to.be.below("+serverConfig.getTimeOutRequest()+");",
                     "});",
                     "pm.environment.set(\"id\", pm.response.json());"
             ));
@@ -309,7 +309,7 @@ public class IntegrationTestWriter {
     }
 
 
-    public static Map<String, Object> generateTestIntegration(List<EntityTestIntegrationVO> entityList, ServerApplicationConfigVO server) {
+    public static Map<String, Object> generateTestIntegration(List<EntityTestIntegrationVO> entityList, ServerApplicationConfigVO serverConfig) {
         Map<String, Object> exit = new LinkedHashMap<String, Object>();
         exit.put("info", generateInfo());
         List<Map<String, Object>> itens = new ArrayList<Map<String, Object>>();
@@ -317,11 +317,11 @@ public class IntegrationTestWriter {
         for (EntityTestIntegrationVO entity : entityList) {
             Map<String, Object> map = new LinkedHashMap<String, Object>();
             map.put("name", entity.getEntityName());
-            map.put("item", generateOperation(entity));
+            map.put("item", generateOperation(entity, serverConfig));
             itens.add(map);
         }
         exit.put("item", itens);
-        exit.put("variable", generateVariable(server));
+        exit.put("variable", generateVariable(serverConfig));
         exit.put("event", generateEvent());
 
         return exit;

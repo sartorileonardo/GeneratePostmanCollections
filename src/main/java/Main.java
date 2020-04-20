@@ -12,14 +12,19 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         //My config server application'
-        ServerApplicationConfigVO serverConfig = new ServerApplicationConfigVO("localhost", 8081, "/kwscontrole/erpweb", 83688, 18);
+        ServerApplicationConfigVO serverConfig = new ServerApplicationConfigVO(
+                "localhost",
+                8081,
+                "/kwscontrole/erpweb",
+                83688,
+                18,
+                5000);
 
         //Names from my entities
-        //EntityTestIntegrationVO entity1 = getEntityInstance("Client", "clients", "id");
-        //EntityTestIntegrationVO entity2 = getEntityInstance("Staff", "staffs", "id");
-        EntityTestIntegrationVO entity1 = getEntityInstance("Telas", "telas", "codigo");
-
-        List<EntityTestIntegrationVO> entityList = Arrays.asList(entity1);
+        List<EntityTestIntegrationVO> entityList = Arrays.asList(
+                getEntityInstance("Telas", "telas", "codigo"),
+                getEntityInstance("Modulos", "modulos", "codigo")
+        );
 
         generate(entityList, serverConfig);
     }

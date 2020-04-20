@@ -1,6 +1,6 @@
 {
   "info": {
-    "_postman_id": "1477070978640280902-0.64450395-1263337946",
+    "_postman_id": "8648770684997201278-0.26587903-885523051",
     "name": "Registers",
     "description": "My Registers (CRUD)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -15,13 +15,13 @@
             {
               "listen": "test",
               "script": {
-                "id": "2596254523337223152-0.8205524-1375872876",
+                "id": "9103568891994224406-0.28725624-684662614",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
                   "});",
-                  "pm.test(\"Response time is less than 500ms\", function () {",
-                  "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "pm.test(\"Response time is less than 5000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(5000);",
                   "});",
                   "var jsonData = pm.response.json();",
                   "var projectKeys = [];",
@@ -42,12 +42,12 @@
                 ],
                 "type": "text/javascript"
               },
-              "id": "1606778270170790428-0.04159403-1086743926"
+              "id": "8801570506528037856-0.6713296-1929233985"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "2236852454513627617-0.5577861-2038973952",
+                "id": "253189995022041785-0.22333026-702544261",
                 "exec": [
                   "pm.environment.unset(\"id\");",
                   "pm.environment.unset(\"dynamicBody\");"
@@ -98,13 +98,13 @@
             {
               "listen": "test",
               "script": {
-                "id": "5791706818867200447-0.96160495-256330046",
+                "id": "1763851265045685900-0.4754113-611158470",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
                   "});",
-                  "pm.test(\"Response time is less than 500ms\", function () {",
-                  "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "pm.test(\"Response time is less than 5000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(5000);",
                   "});",
                   "",
                   "pm.environment.set('dynamicBody', JSON.parse(responseBody));",
@@ -112,12 +112,12 @@
                 ],
                 "type": "text/javascript"
               },
-              "id": "2606857593323283120-0.8541701-74427938"
+              "id": "5484861969501106954-0.22422928-883561737"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "7221465753405744304-0.8825907-16427643",
+                "id": "3324915990380589392-0.07353687-1304974733",
                 "exec": [
                   ""
                 ],
@@ -167,24 +167,24 @@
             {
               "listen": "test",
               "script": {
-                "id": "5390701886187255670-0.89734-1740105401",
+                "id": "381932701565362431-0.49674994-281210564",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
                   "});",
-                  "pm.test(\"Response time is less than 500ms\", function () {",
-                  "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "pm.test(\"Response time is less than 5000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(5000);",
                   "});",
                   "pm.environment.set(\"id\", pm.response.json());"
                 ],
                 "type": "text/javascript"
               },
-              "id": "6017115124087943666-0.63907087-700899783"
+              "id": "2340222920160340377-0.8733377-1361976158"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "7309487843887250154-0.24347049-388173293",
+                "id": "6798150274226189039-0.30752987-1303884537",
                 "exec": [
                   "var dynamicBody = pm.environment.get(\"dynamicBody\");",
                   "pm.environment.set(\"dynamicBody\", JSON.stringify(dynamicBody));",
@@ -240,15 +240,15 @@
             {
               "listen": "test",
               "script": {
-                "id": "3409153550800291637-0.2911021-1249122251",
+                "id": "3806557630316634735-0.5237509-351406161",
                 "type": "text/javascript"
               },
-              "id": "6586467692000695752-0.9032971-1816411030"
+              "id": "5772848159554633546-0.18815482-1859109935"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "3537695491800806566-0.6221693-878278488",
+                "id": "8935724752571241477-0.5327043-73291422",
                 "exec": [
                   "pm.environment.get(\"id\")"
                 ],
@@ -302,15 +302,15 @@
             {
               "listen": "test",
               "script": {
-                "id": "2423821278789606119-0.58047116-419662875",
+                "id": "3931030830802975413-0.4242137-319370572",
                 "type": "text/javascript"
               },
-              "id": "2826321413731748732-0.563329-1525705294"
+              "id": "5401870857154314841-0.67143846-965224959"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "6478767178270513070-0.1068815-869380841",
+                "id": "8807852953247036616-0.9352479-2099271497",
                 "exec": [
                   "pm.environment.get(\"id\")"
                 ],
@@ -355,29 +355,379 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Modulos",
+      "item": [
+        {
+          "name": "Get All Modulos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7633758670327171625-0.08906931-1244711933",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response time is less than 5000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(5000);",
+                  "});",
+                  "var jsonData = pm.response.json();",
+                  "var projectKeys = [];",
+                  "dataKeys = [];",
+                  "for (var i in jsonData) {",
+                  "    if(jsonData[i].hasOwnProperty('codigo')) {",
+                  "        dataKeys.push(i);",
+                  "        projectKeys.push(jsonData[i].codigo);",
+                  "    }",
+                  "}",
+                  "function getMaxOfArray(numArray) {",
+                  "    return Math.max.apply(null, numArray);",
+                  "}",
+                  "",
+                  "pm.environment.set(\"id\", getMaxOfArray(projectKeys));",
+                  "console.log(pm.environment.get(\"id\"));",
+                  ""
+                ],
+                "type": "text/javascript"
+              },
+              "id": "7495217239093099002-0.84428144-955681214"
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "2166008555006203425-0.47671622-112582212",
+                "exec": [
+                  "pm.environment.unset(\"id\");",
+                  "pm.environment.unset(\"dynamicBody\");"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "description": "Get All - Modulos",
+            "method": "GET",
+            "header": [
+              {
+                "key": "erkfilial",
+                "type": "text",
+                "value": "{{erkfilial}}"
+              },
+              {
+                "key": "erkusuario",
+                "type": "text",
+                "value": "{{erkusuario}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{default_server_config}}/modulos/",
+              "path": [
+                "modulos",
+                ""
+              ],
+              "host": [
+                "{{default_server_config}}"
+              ]
+            }
+          },
+          "response": [
+            ""
+          ]
+        },
+        {
+          "name": "Get One Modulos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "406004278851306020-0.6214441-512874375",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response time is less than 5000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(5000);",
+                  "});",
+                  "",
+                  "pm.environment.set('dynamicBody', JSON.parse(responseBody));",
+                  "console.log(pm.environment.get(\"dynamicBody\"));"
+                ],
+                "type": "text/javascript"
+              },
+              "id": "5839976909229002248-0.56460613-862740591"
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "6426895240481914359-0.27809936-1138770650",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "description": "Get One - Modulos",
+            "method": "GET",
+            "header": [
+              {
+                "key": "erkfilial",
+                "type": "text",
+                "value": "{{erkfilial}}"
+              },
+              {
+                "key": "erkusuario",
+                "type": "text",
+                "value": "{{erkusuario}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{default_server_config}}/modulos/{{id}}",
+              "path": [
+                "modulos",
+                "{{id}}"
+              ],
+              "host": [
+                "{{default_server_config}}"
+              ]
+            }
+          },
+          "response": [
+            ""
+          ]
+        },
+        {
+          "name": "Add Modulos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "7811220581206240815-0.42560965-2063083680",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response time is less than 5000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(5000);",
+                  "});",
+                  "pm.environment.set(\"id\", pm.response.json());"
+                ],
+                "type": "text/javascript"
+              },
+              "id": "5128037659786403143-0.46128923-1444954519"
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "7576490781361277780-0.3139391-431741234",
+                "exec": [
+                  "var dynamicBody = pm.environment.get(\"dynamicBody\");",
+                  "pm.environment.set(\"dynamicBody\", JSON.stringify(dynamicBody));",
+                  "pm.environment.get(\"dynamicBody\");"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "description": "Add - Modulos",
+            "method": "POST",
+            "header": [
+              {
+                "key": "erkfilial",
+                "type": "text",
+                "value": "{{erkfilial}}"
+              },
+              {
+                "key": "erkusuario",
+                "type": "text",
+                "value": "{{erkusuario}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{default_server_config}}/modulos/",
+              "path": [
+                "modulos",
+                ""
+              ],
+              "host": [
+                "{{default_server_config}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{{dynamicBody}}"
+            }
+          },
+          "response": [
+            ""
+          ]
+        },
+        {
+          "name": "Update Modulos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "6356029606130909443-0.9690075-1685369814",
+                "type": "text/javascript"
+              },
+              "id": "8804171541423700517-0.64544713-465401102"
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "8762444585486703228-0.077200234-840084373",
+                "exec": [
+                  "pm.environment.get(\"id\")"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "description": "Update - Modulos",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "erkfilial",
+                "type": "text",
+                "value": "{{erkfilial}}"
+              },
+              {
+                "key": "erkusuario",
+                "type": "text",
+                "value": "{{erkusuario}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{default_server_config}}/modulos/{{id}}",
+              "path": [
+                "modulos",
+                "{{id}}"
+              ],
+              "host": [
+                "{{default_server_config}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{{dynamicBody}}"
+            }
+          },
+          "response": [
+            ""
+          ]
+        },
+        {
+          "name": "Delete Modulos",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "6747948915671622752-0.982355-213558922",
+                "type": "text/javascript"
+              },
+              "id": "3556936870190903617-0.1294998-723558506"
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "3922990922772524418-0.3732865-1231807580",
+                "exec": [
+                  "pm.environment.get(\"id\")"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "description": "Delete - Modulos",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "erkfilial",
+                "type": "text",
+                "value": "{{erkfilial}}"
+              },
+              {
+                "key": "erkusuario",
+                "type": "text",
+                "value": "{{erkusuario}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{default_server_config}}/modulos/{{id}}",
+              "path": [
+                "modulos",
+                "{{id}}"
+              ],
+              "host": [
+                "{{default_server_config}}"
+              ]
+            }
+          },
+          "response": [
+            ""
+          ]
+        }
+      ]
     }
   ],
   "variable": [
     {
-      "id": "599191446267477922-0.20835292-2003504831",
+      "id": "4120636736176759767-0.14088279-1555989406",
       "key": "default_server_config",
       "value": "http://localhost:8081/kwscontrole/erpweb",
       "type": "string"
     },
     {
-      "id": "3838818741163947362-0.59254336-1805105298",
+      "id": "806235187694842569-0.7900766-1653942046",
       "key": "erkusuario",
       "value": 83688,
       "type": "string"
     },
     {
-      "id": "7102774620584250482-0.41607988-991722102",
+      "id": "5338335749600974377-0.40767342-1818454580",
       "key": "erkfilial",
       "value": 18,
       "type": "string"
     },
     {
-      "id": "3777151794348898956-0.6738986-542175269",
+      "id": "6606510712506858184-0.60077524-225643426",
       "key": "id",
       "value": "",
       "type": "string"
@@ -387,7 +737,7 @@
     {
       "listen": "prerequest",
       "script": {
-        "id": "6046896621923261397-0.95031184-395195858",
+        "id": "3053042810566753162-0.50997376-642472619",
         "type": "text/javascript",
         "exec": [
           ""
@@ -397,7 +747,7 @@
     {
       "listen": "test",
       "script": {
-        "id": "1980087640525784870-0.14330816-63130619",
+        "id": "2117699440669415289-0.4397874-1803674940",
         "type": "text/javascript",
         "exec": [
           ""

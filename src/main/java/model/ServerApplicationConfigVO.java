@@ -6,13 +6,15 @@ public class ServerApplicationConfigVO {
     private String defaultPath;
     private Integer erkUsuario;
     private Integer erkFilial;
+    private Integer timeOutRequest;
 
-    public ServerApplicationConfigVO(String ip, Integer port, String defaultPath, Integer erkUsuario, Integer erkFilial) {
+    public ServerApplicationConfigVO(String ip, Integer port, String defaultPath, Integer erkUsuario, Integer erkFilial, Integer timeOutRequest) {
         this.ip = ip;
         this.port = port;
         this.defaultPath = defaultPath;
         this.erkUsuario = erkUsuario;
         this.erkFilial = erkFilial;
+        this.timeOutRequest = timeOutRequest;
     }
 
     public String getIp() {
@@ -53,5 +55,13 @@ public class ServerApplicationConfigVO {
 
     public void setErkFilial(Integer erkFilial) {
         this.erkFilial = erkFilial;
+    }
+
+    public Integer getTimeOutRequest() {
+        return timeOutRequest;
+    }
+
+    public void setTimeOutRequest(Integer timeOutRequest) {
+        this.timeOutRequest = timeOutRequest;
     }
 }
