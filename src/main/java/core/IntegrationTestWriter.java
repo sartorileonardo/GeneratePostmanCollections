@@ -232,15 +232,38 @@ public class IntegrationTestWriter {
 
         if (operation.equalsIgnoreCase("Get One")) {
             script.put("exec", Arrays.asList(
-                    "pm.test(\"Status code is 200\", function () {",
-                    "    pm.response.to.have.status(200);",
-                    "});",
-                    "pm.test(\"Response time is less than "+serverConfig.getTimeOutRequest()+"ms\", function () {",
-                    "    pm.expect(pm.response.responseTime).to.be.below("+serverConfig.getTimeOutRequest()+");",
-                    "});",
-                    "",
-                    "pm.environment.set('dynamicBody', JSON.parse(responseBody));",
-                    "console.log(pm.environment.get(\"dynamicBody\"));"
+                    "pm.test(\"Status code is 200\", function () {\n" +
+                            "    pm.response.to.have.status(200);\n" +
+                            "});\n" +
+                            "pm.test(\"Response time is less than "+serverConfig.getTimeOutRequest()+"ms\", function () {\n" +
+                            "    pm.expect(pm.response.responseTime).to.be.below("+serverConfig.getTimeOutRequest()+");\n" +
+                            "});\n" +
+                            "var responseBody = JSON.parse(responseBody);\n" +
+                            "\n" +
+                            "function generateRandomText(length){\n" +
+                            "   var result           = '';\n" +
+                            "   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';\n" +
+                            "   var charactersLength = characters.length;\n" +
+                            "   for ( var i = 0; i < length; i++ ) {\n" +
+                            "      result += characters.charAt(Math.floor(Math.random() * charactersLength));\n" +
+                            "   }\n" +
+                            "   return result;\n" +
+                            "}\n" +
+                            "\n" +
+                            "function generateRandomNumber(length){\n" +
+                            "    return Math.floor(Math.random() * length);\n" +
+                            "}\n" +
+                            "\n" +
+                            "function replacePrimaryKey(entity){\n" +
+                            "    if(isNaN(entity.codigo)){\n" +
+                            "        entity.codigo = generateRandomText(generateRandomNumber(entity.codigo.length));\n" +
+                            "        console.log(\"Is not a number.\");\n" +
+                            "    }",
+                            "    return entity;\n" +
+                            "}\n" +
+                            "\n" +
+                            "pm.environment.set('dynamicBody', replacePrimaryKey(responseBody));\n" +
+                            "console.log(pm.environment.get(\"dynamicBody\"));"
             ));
         }
 

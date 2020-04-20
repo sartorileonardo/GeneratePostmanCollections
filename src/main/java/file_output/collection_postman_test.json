@@ -1,6 +1,6 @@
 {
   "info": {
-    "_postman_id": "3206581171718519395-0.7658521-1070989099",
+    "_postman_id": "7215371952077590228-0.5512825-859531352",
     "name": "Registers",
     "description": "My Registers (CRUD)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -15,7 +15,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "2511500566844751177-0.063075006-1222745275",
+                "id": "8310547058286124766-0.08097863-1764693525",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
@@ -30,12 +30,12 @@
                 ],
                 "type": "text/javascript"
               },
-              "id": "326907422819113263-0.7259774-2129764407"
+              "id": "5517756471411245974-0.27545238-1041338442"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "854416780146256299-0.3711707-16112843",
+                "id": "3686722434111057150-0.8097144-427289018",
                 "exec": [
                   "pm.environment.unset(\"id\");",
                   "pm.environment.unset(\"dynamicBody\");"
@@ -86,26 +86,18 @@
             {
               "listen": "test",
               "script": {
-                "id": "4978264296737715586-0.32195842-404744006",
+                "id": "594819782842403981-0.82360864-842327420",
                 "exec": [
-                  "pm.test(\"Status code is 200\", function () {",
-                  "    pm.response.to.have.status(200);",
-                  "});",
-                  "pm.test(\"Response time is less than 5000ms\", function () {",
-                  "    pm.expect(pm.response.responseTime).to.be.below(5000);",
-                  "});",
-                  "",
-                  "pm.environment.set('dynamicBody', JSON.parse(responseBody));",
-                  "console.log(pm.environment.get(\"dynamicBody\"));"
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\nvar responseBody = JSON.parse(responseBody);\n\nfunction generateRandomText(length){\n   var result           = '';\n   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';\n   var charactersLength = characters.length;\n   for ( var i = 0; i < length; i++ ) {\n      result += characters.charAt(Math.floor(Math.random() * charactersLength));\n   }\n   return result;\n}\n\nfunction generateRandomNumber(length){\n    return Math.floor(Math.random() * length);\n}\n\nfunction replacePrimaryKey(entity){\n    if(isNaN(entity.codigo)){\n        entity.codigo = generateRandomText(generateRandomNumber(entity.codigo.length));\n        console.log(\"Is not a number.\");\n    }else{\n        entity.codigo = \"test\"+generateRandomNumber(entity.codigo.length);\n        console.log(\"Is number.\");\n    }\n    return entity;\n}\n\npm.environment.set('dynamicBody', replacePrimaryKey(responseBody));\nconsole.log(pm.environment.get(\"dynamicBody\"));"
                 ],
                 "type": "text/javascript"
               },
-              "id": "7703582200171183100-0.5590777-1876871220"
+              "id": "6453708764811088748-0.8512015-618189414"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "5824464604135886446-0.6065102-793505040",
+                "id": "4332406495762438942-0.3751992-1912943299",
                 "exec": [
                   ""
                 ],
@@ -155,7 +147,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "4866284911633334681-0.5897109-1559589082",
+                "id": "8335429335390289068-0.9245448-1239145794",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
@@ -167,12 +159,12 @@
                 ],
                 "type": "text/javascript"
               },
-              "id": "7900048781742117288-0.21991444-941044879"
+              "id": "2918085631688328224-0.5417844-139135071"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "5297928181998487027-0.69408447-943471319",
+                "id": "8750011974276213334-0.3017311-1899459160",
                 "exec": [
                   "var dynamicBody = pm.environment.get(\"dynamicBody\");",
                   "pm.environment.set(\"dynamicBody\", JSON.stringify(dynamicBody));",
@@ -228,15 +220,15 @@
             {
               "listen": "test",
               "script": {
-                "id": "827351709773327725-0.896276-1152360222",
+                "id": "5743435479551586865-0.009016097-709677619",
                 "type": "text/javascript"
               },
-              "id": "5979320580480776559-0.30169278-319590404"
+              "id": "5350003553067878576-0.27765685-1870071301"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "4819805746722830337-0.06215334-1328887461",
+                "id": "2671120930591166119-0.17198694-1830706851",
                 "exec": [
                   "pm.environment.get(\"id\")"
                 ],
@@ -290,15 +282,15 @@
             {
               "listen": "test",
               "script": {
-                "id": "1039885438715316746-0.65005404-694220187",
+                "id": "2818767151224078860-0.21634972-1450127116",
                 "type": "text/javascript"
               },
-              "id": "601423759881336389-0.9828284-754677128"
+              "id": "5945987808131035102-0.26698643-1904408937"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "2736301467591805097-0.48328102-2033858839",
+                "id": "5687848644276274165-0.059233963-117305286",
                 "exec": [
                   "pm.environment.get(\"id\")"
                 ],
@@ -345,15 +337,15 @@
       ]
     },
     {
-      "name": "Scripts",
+      "name": "Especies",
       "item": [
         {
-          "name": "Get All Scripts",
+          "name": "Get All Especies",
           "event": [
             {
               "listen": "test",
               "script": {
-                "id": "8287046351621175006-0.81788474-1075057332",
+                "id": "8056965811011398571-0.28150356-109759172",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
@@ -363,17 +355,17 @@
                   "});",
                   "",
                   "var jsonData = pm.response.json();",
-                  "pm.environment.set(\"id\", jsonData[jsonData.sort().length-1].numero);",
+                  "pm.environment.set(\"id\", jsonData[jsonData.sort().length-1].codigo);",
                   "console.log(pm.environment.get(\"id\"));"
                 ],
                 "type": "text/javascript"
               },
-              "id": "1810859854218525678-0.6863761-1302311146"
+              "id": "756271251154906055-0.10232079-1219610211"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "2185336555326114857-0.03321141-2143236214",
+                "id": "4416830481345496780-0.80045813-1232081612",
                 "exec": [
                   "pm.environment.unset(\"id\");",
                   "pm.environment.unset(\"dynamicBody\");"
@@ -383,7 +375,7 @@
             }
           ],
           "request": {
-            "description": "Get All - Scripts",
+            "description": "Get All - Especies",
             "method": "GET",
             "header": [
               {
@@ -404,9 +396,9 @@
               }
             ],
             "url": {
-              "raw": "{{default_server_config}}/scripts/",
+              "raw": "{{default_server_config}}/especies/",
               "path": [
-                "scripts",
+                "especies",
                 ""
               ],
               "host": [
@@ -419,31 +411,23 @@
           ]
         },
         {
-          "name": "Get One Scripts",
+          "name": "Get One Especies",
           "event": [
             {
               "listen": "test",
               "script": {
-                "id": "8381942707147536743-0.75346845-1241496274",
+                "id": "7610212161500641513-0.5578202-575932828",
                 "exec": [
-                  "pm.test(\"Status code is 200\", function () {",
-                  "    pm.response.to.have.status(200);",
-                  "});",
-                  "pm.test(\"Response time is less than 5000ms\", function () {",
-                  "    pm.expect(pm.response.responseTime).to.be.below(5000);",
-                  "});",
-                  "",
-                  "pm.environment.set('dynamicBody', JSON.parse(responseBody));",
-                  "console.log(pm.environment.get(\"dynamicBody\"));"
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\nvar responseBody = JSON.parse(responseBody);\n\nfunction generateRandomText(length){\n   var result           = '';\n   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';\n   var charactersLength = characters.length;\n   for ( var i = 0; i < length; i++ ) {\n      result += characters.charAt(Math.floor(Math.random() * charactersLength));\n   }\n   return result;\n}\n\nfunction generateRandomNumber(length){\n    return Math.floor(Math.random() * length);\n}\n\nfunction replacePrimaryKey(entity){\n    if(isNaN(entity.codigo)){\n        entity.codigo = generateRandomText(generateRandomNumber(entity.codigo.length));\n        console.log(\"Is not a number.\");\n    }else{\n        entity.codigo = \"test\"+generateRandomNumber(entity.codigo.length);\n        console.log(\"Is number.\");\n    }\n    return entity;\n}\n\npm.environment.set('dynamicBody', replacePrimaryKey(responseBody));\nconsole.log(pm.environment.get(\"dynamicBody\"));"
                 ],
                 "type": "text/javascript"
               },
-              "id": "9132045783048656344-0.24061984-141721635"
+              "id": "871438518534725882-0.5326696-1201945353"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "8677359449873053694-0.19898969-1565136269",
+                "id": "4643992296019054109-0.08480674-1236725058",
                 "exec": [
                   ""
                 ],
@@ -452,7 +436,7 @@
             }
           ],
           "request": {
-            "description": "Get One - Scripts",
+            "description": "Get One - Especies",
             "method": "GET",
             "header": [
               {
@@ -473,9 +457,9 @@
               }
             ],
             "url": {
-              "raw": "{{default_server_config}}/scripts/{{id}}",
+              "raw": "{{default_server_config}}/especies/{{id}}",
               "path": [
-                "scripts",
+                "especies",
                 "{{id}}"
               ],
               "host": [
@@ -488,12 +472,12 @@
           ]
         },
         {
-          "name": "Add Scripts",
+          "name": "Add Especies",
           "event": [
             {
               "listen": "test",
               "script": {
-                "id": "429812873477572408-0.6812956-1231357203",
+                "id": "1018587928044079084-0.94235784-1058399110",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
@@ -505,12 +489,12 @@
                 ],
                 "type": "text/javascript"
               },
-              "id": "3574957296533494600-0.45230538-29877398"
+              "id": "290931413413961033-0.8050791-348221826"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "2625572526913214674-0.5537057-1938132515",
+                "id": "1186512246173516586-0.23864233-1291829881",
                 "exec": [
                   "var dynamicBody = pm.environment.get(\"dynamicBody\");",
                   "pm.environment.set(\"dynamicBody\", JSON.stringify(dynamicBody));",
@@ -521,7 +505,7 @@
             }
           ],
           "request": {
-            "description": "Add - Scripts",
+            "description": "Add - Especies",
             "method": "POST",
             "header": [
               {
@@ -542,9 +526,9 @@
               }
             ],
             "url": {
-              "raw": "{{default_server_config}}/scripts/",
+              "raw": "{{default_server_config}}/especies/",
               "path": [
-                "scripts",
+                "especies",
                 ""
               ],
               "host": [
@@ -561,20 +545,20 @@
           ]
         },
         {
-          "name": "Update Scripts",
+          "name": "Update Especies",
           "event": [
             {
               "listen": "test",
               "script": {
-                "id": "1382540875161497898-0.85373586-502783125",
+                "id": "3731432094115324020-0.96222275-759797804",
                 "type": "text/javascript"
               },
-              "id": "4180712258630370260-0.22525215-175063750"
+              "id": "948571366521874468-0.005680859-264112135"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "5363022822375968088-0.8130504-1182546859",
+                "id": "2115596641298159220-0.6152615-1326800453",
                 "exec": [
                   "pm.environment.get(\"id\")"
                 ],
@@ -583,7 +567,7 @@
             }
           ],
           "request": {
-            "description": "Update - Scripts",
+            "description": "Update - Especies",
             "method": "PUT",
             "header": [
               {
@@ -604,9 +588,9 @@
               }
             ],
             "url": {
-              "raw": "{{default_server_config}}/scripts/{{id}}",
+              "raw": "{{default_server_config}}/especies/{{id}}",
               "path": [
-                "scripts",
+                "especies",
                 "{{id}}"
               ],
               "host": [
@@ -623,20 +607,20 @@
           ]
         },
         {
-          "name": "Delete Scripts",
+          "name": "Delete Especies",
           "event": [
             {
               "listen": "test",
               "script": {
-                "id": "4145191213314292570-0.24689037-1469371672",
+                "id": "8451513783652999928-0.16762936-276477042",
                 "type": "text/javascript"
               },
-              "id": "1868209702693318958-0.47476107-859964939"
+              "id": "190242067678830813-0.61426365-2068669116"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "9003498852689823668-0.61644006-155486513",
+                "id": "3209858947310453388-0.9431022-1098774089",
                 "exec": [
                   "pm.environment.get(\"id\")"
                 ],
@@ -645,7 +629,7 @@
             }
           ],
           "request": {
-            "description": "Delete - Scripts",
+            "description": "Delete - Especies",
             "method": "DELETE",
             "header": [
               {
@@ -666,9 +650,9 @@
               }
             ],
             "url": {
-              "raw": "{{default_server_config}}/scripts/{{id}}",
+              "raw": "{{default_server_config}}/especies/{{id}}",
               "path": [
-                "scripts",
+                "especies",
                 "{{id}}"
               ],
               "host": [
@@ -685,25 +669,25 @@
   ],
   "variable": [
     {
-      "id": "5018795399195733124-0.22130197-1098050656",
+      "id": "3245146071748280174-0.99776757-740892702",
       "key": "default_server_config",
       "value": "http://localhost:8081/kwscontrole/erpweb",
       "type": "string"
     },
     {
-      "id": "939256403476590257-0.66425776-152331688",
+      "id": "179417508241244783-0.294459-2108676949",
       "key": "erkusuario",
       "value": 83688,
       "type": "string"
     },
     {
-      "id": "6276199838218221488-0.11312735-1191014017",
+      "id": "8079034197471313216-0.017292023-288093117",
       "key": "erkfilial",
       "value": 18,
       "type": "string"
     },
     {
-      "id": "1484410332951017623-0.9665134-276562065",
+      "id": "8888581748756020174-0.24151355-1309421530",
       "key": "id",
       "value": "",
       "type": "string"
@@ -713,7 +697,7 @@
     {
       "listen": "prerequest",
       "script": {
-        "id": "5672225826608496108-0.20769507-1635947414",
+        "id": "4346847033143323378-0.5856507-1661284123",
         "type": "text/javascript",
         "exec": [
           ""
@@ -723,7 +707,7 @@
     {
       "listen": "test",
       "script": {
-        "id": "4777390610693519770-0.8733564-1957144964",
+        "id": "6421484164986915622-0.6286191-308648589",
         "type": "text/javascript",
         "exec": [
           ""
