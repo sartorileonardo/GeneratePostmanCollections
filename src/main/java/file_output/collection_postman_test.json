@@ -1,0 +1,408 @@
+{
+  "info": {
+    "_postman_id": "1477070978640280902-0.64450395-1263337946",
+    "name": "Registers",
+    "description": "My Registers (CRUD)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Telas",
+      "item": [
+        {
+          "name": "Get All Telas",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "2596254523337223152-0.8205524-1375872876",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response time is less than 500ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "});",
+                  "var jsonData = pm.response.json();",
+                  "var projectKeys = [];",
+                  "dataKeys = [];",
+                  "for (var i in jsonData) {",
+                  "    if(jsonData[i].hasOwnProperty('codigo')) {",
+                  "        dataKeys.push(i);",
+                  "        projectKeys.push(jsonData[i].codigo);",
+                  "    }",
+                  "}",
+                  "function getMaxOfArray(numArray) {",
+                  "    return Math.max.apply(null, numArray);",
+                  "}",
+                  "",
+                  "pm.environment.set(\"id\", getMaxOfArray(projectKeys));",
+                  "console.log(pm.environment.get(\"id\"));",
+                  ""
+                ],
+                "type": "text/javascript"
+              },
+              "id": "1606778270170790428-0.04159403-1086743926"
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "2236852454513627617-0.5577861-2038973952",
+                "exec": [
+                  "pm.environment.unset(\"id\");",
+                  "pm.environment.unset(\"dynamicBody\");"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "description": "Get All - Telas",
+            "method": "GET",
+            "header": [
+              {
+                "key": "erkfilial",
+                "type": "text",
+                "value": "{{erkfilial}}"
+              },
+              {
+                "key": "erkusuario",
+                "type": "text",
+                "value": "{{erkusuario}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{default_server_config}}/telas/",
+              "path": [
+                "telas",
+                ""
+              ],
+              "host": [
+                "{{default_server_config}}"
+              ]
+            }
+          },
+          "response": [
+            ""
+          ]
+        },
+        {
+          "name": "Get One Telas",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5791706818867200447-0.96160495-256330046",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response time is less than 500ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "});",
+                  "",
+                  "pm.environment.set('dynamicBody', JSON.parse(responseBody));",
+                  "console.log(pm.environment.get(\"dynamicBody\"));"
+                ],
+                "type": "text/javascript"
+              },
+              "id": "2606857593323283120-0.8541701-74427938"
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "7221465753405744304-0.8825907-16427643",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "description": "Get One - Telas",
+            "method": "GET",
+            "header": [
+              {
+                "key": "erkfilial",
+                "type": "text",
+                "value": "{{erkfilial}}"
+              },
+              {
+                "key": "erkusuario",
+                "type": "text",
+                "value": "{{erkusuario}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{default_server_config}}/telas/{{id}}",
+              "path": [
+                "telas",
+                "{{id}}"
+              ],
+              "host": [
+                "{{default_server_config}}"
+              ]
+            }
+          },
+          "response": [
+            ""
+          ]
+        },
+        {
+          "name": "Add Telas",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5390701886187255670-0.89734-1740105401",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response time is less than 500ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(500);",
+                  "});",
+                  "pm.environment.set(\"id\", pm.response.json());"
+                ],
+                "type": "text/javascript"
+              },
+              "id": "6017115124087943666-0.63907087-700899783"
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "7309487843887250154-0.24347049-388173293",
+                "exec": [
+                  "var dynamicBody = pm.environment.get(\"dynamicBody\");",
+                  "pm.environment.set(\"dynamicBody\", JSON.stringify(dynamicBody));",
+                  "pm.environment.get(\"dynamicBody\");"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "description": "Add - Telas",
+            "method": "POST",
+            "header": [
+              {
+                "key": "erkfilial",
+                "type": "text",
+                "value": "{{erkfilial}}"
+              },
+              {
+                "key": "erkusuario",
+                "type": "text",
+                "value": "{{erkusuario}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{default_server_config}}/telas/",
+              "path": [
+                "telas",
+                ""
+              ],
+              "host": [
+                "{{default_server_config}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{{dynamicBody}}"
+            }
+          },
+          "response": [
+            ""
+          ]
+        },
+        {
+          "name": "Update Telas",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "3409153550800291637-0.2911021-1249122251",
+                "type": "text/javascript"
+              },
+              "id": "6586467692000695752-0.9032971-1816411030"
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "3537695491800806566-0.6221693-878278488",
+                "exec": [
+                  "pm.environment.get(\"id\")"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "description": "Update - Telas",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "erkfilial",
+                "type": "text",
+                "value": "{{erkfilial}}"
+              },
+              {
+                "key": "erkusuario",
+                "type": "text",
+                "value": "{{erkusuario}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{default_server_config}}/telas/{{id}}",
+              "path": [
+                "telas",
+                "{{id}}"
+              ],
+              "host": [
+                "{{default_server_config}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{{dynamicBody}}"
+            }
+          },
+          "response": [
+            ""
+          ]
+        },
+        {
+          "name": "Delete Telas",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "2423821278789606119-0.58047116-419662875",
+                "type": "text/javascript"
+              },
+              "id": "2826321413731748732-0.563329-1525705294"
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "6478767178270513070-0.1068815-869380841",
+                "exec": [
+                  "pm.environment.get(\"id\")"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "description": "Delete - Telas",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "erkfilial",
+                "type": "text",
+                "value": "{{erkfilial}}"
+              },
+              {
+                "key": "erkusuario",
+                "type": "text",
+                "value": "{{erkusuario}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{default_server_config}}/telas/{{id}}",
+              "path": [
+                "telas",
+                "{{id}}"
+              ],
+              "host": [
+                "{{default_server_config}}"
+              ]
+            }
+          },
+          "response": [
+            ""
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "id": "599191446267477922-0.20835292-2003504831",
+      "key": "default_server_config",
+      "value": "http://localhost:8081/kwscontrole/erpweb",
+      "type": "string"
+    },
+    {
+      "id": "3838818741163947362-0.59254336-1805105298",
+      "key": "erkusuario",
+      "value": 83688,
+      "type": "string"
+    },
+    {
+      "id": "7102774620584250482-0.41607988-991722102",
+      "key": "erkfilial",
+      "value": 18,
+      "type": "string"
+    },
+    {
+      "id": "3777151794348898956-0.6738986-542175269",
+      "key": "id",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "6046896621923261397-0.95031184-395195858",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "1980087640525784870-0.14330816-63130619",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
