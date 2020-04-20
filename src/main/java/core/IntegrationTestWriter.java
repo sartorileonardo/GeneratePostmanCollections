@@ -223,22 +223,10 @@ public class IntegrationTestWriter {
                     "pm.test(\"Response time is less than "+serverConfig.getTimeOutRequest()+"ms\", function () {",
                     "    pm.expect(pm.response.responseTime).to.be.below("+serverConfig.getTimeOutRequest()+");",
                     "});",
-                    "var jsonData = pm.response.json();",
-                    "var projectKeys = [];",
-                    "dataKeys = [];",
-                    "for (var i in jsonData) {",
-                    "    if(jsonData[i].hasOwnProperty('"+primaryKeyName+"')) {",
-                    "        dataKeys.push(i);",
-                    "        projectKeys.push(jsonData[i]."+primaryKeyName+");",
-                    "    }",
-                    "}",
-                    "function getMaxOfArray(numArray) {",
-                    "    return Math.max.apply(null, numArray);",
-                    "}",
                     "",
-                    "pm.environment.set(\"id\", getMaxOfArray(projectKeys));",
-                    "console.log(pm.environment.get(\"id\"));",
-                    ""
+                    "var jsonData = pm.response.json();",
+                    "pm.environment.set(\"id\", jsonData[jsonData.sort().length-1]."+primaryKeyName+");",
+                    "console.log(pm.environment.get(\"id\"));"
             ));
         }
 
