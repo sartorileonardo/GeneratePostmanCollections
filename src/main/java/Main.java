@@ -23,7 +23,7 @@ public class Main {
         //Names from my entities
         List<EntityTestIntegrationVO> entityList = Arrays.asList(
                 getEntityInstance("Telas", "telas", "codigo"),
-                getEntityInstance("Modulos", "modulos", "codigo")
+                getEntityInstance("Scripts", "scripts", "numero")
         );
 
         generate(entityList, serverConfig);

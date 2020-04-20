@@ -1,6 +1,6 @@
 {
   "info": {
-    "_postman_id": "8648770684997201278-0.26587903-885523051",
+    "_postman_id": "1492981046859461854-0.18508345-304913375",
     "name": "Registers",
     "description": "My Registers (CRUD)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -15,7 +15,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "9103568891994224406-0.28725624-684662614",
+                "id": "5549421396036460999-0.30302393-1308444521",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
@@ -42,12 +42,12 @@
                 ],
                 "type": "text/javascript"
               },
-              "id": "8801570506528037856-0.6713296-1929233985"
+              "id": "1977023413825930123-0.77919835-765435872"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "253189995022041785-0.22333026-702544261",
+                "id": "2409781727305039264-0.49946517-1900234520",
                 "exec": [
                   "pm.environment.unset(\"id\");",
                   "pm.environment.unset(\"dynamicBody\");"
@@ -98,7 +98,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "1763851265045685900-0.4754113-611158470",
+                "id": "7665481514312163113-0.016467929-247449592",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
@@ -112,12 +112,12 @@
                 ],
                 "type": "text/javascript"
               },
-              "id": "5484861969501106954-0.22422928-883561737"
+              "id": "2601157351605992725-0.7373681-560932899"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "3324915990380589392-0.07353687-1304974733",
+                "id": "5975964544397774478-0.13279754-81252291",
                 "exec": [
                   ""
                 ],
@@ -167,7 +167,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "381932701565362431-0.49674994-281210564",
+                "id": "3097751955098810128-0.79006165-1556759142",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
@@ -179,12 +179,12 @@
                 ],
                 "type": "text/javascript"
               },
-              "id": "2340222920160340377-0.8733377-1361976158"
+              "id": "3274333064320936782-0.108087-834591658"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "6798150274226189039-0.30752987-1303884537",
+                "id": "5257423675674791588-0.0642221-2130244501",
                 "exec": [
                   "var dynamicBody = pm.environment.get(\"dynamicBody\");",
                   "pm.environment.set(\"dynamicBody\", JSON.stringify(dynamicBody));",
@@ -240,15 +240,15 @@
             {
               "listen": "test",
               "script": {
-                "id": "3806557630316634735-0.5237509-351406161",
+                "id": "9078469773270739408-0.49867612-235444651",
                 "type": "text/javascript"
               },
-              "id": "5772848159554633546-0.18815482-1859109935"
+              "id": "3957545510536641915-0.7909496-885733589"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "8935724752571241477-0.5327043-73291422",
+                "id": "3026140129067073355-0.10718888-949206539",
                 "exec": [
                   "pm.environment.get(\"id\")"
                 ],
@@ -302,15 +302,15 @@
             {
               "listen": "test",
               "script": {
-                "id": "3931030830802975413-0.4242137-319370572",
+                "id": "574837658743348969-0.84991956-265694772",
                 "type": "text/javascript"
               },
-              "id": "5401870857154314841-0.67143846-965224959"
+              "id": "2618682257590426596-0.9586936-1347297856"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "8807852953247036616-0.9352479-2099271497",
+                "id": "6524349796595668343-0.44726533-1025628591",
                 "exec": [
                   "pm.environment.get(\"id\")"
                 ],
@@ -357,15 +357,15 @@
       ]
     },
     {
-      "name": "Modulos",
+      "name": "Scripts",
       "item": [
         {
-          "name": "Get All Modulos",
+          "name": "Get All Scripts",
           "event": [
             {
               "listen": "test",
               "script": {
-                "id": "7633758670327171625-0.08906931-1244711933",
+                "id": "6609293085522346378-0.919482-133994051",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
@@ -377,9 +377,9 @@
                   "var projectKeys = [];",
                   "dataKeys = [];",
                   "for (var i in jsonData) {",
-                  "    if(jsonData[i].hasOwnProperty('codigo')) {",
+                  "    if(jsonData[i].hasOwnProperty('numero')) {",
                   "        dataKeys.push(i);",
-                  "        projectKeys.push(jsonData[i].codigo);",
+                  "        projectKeys.push(jsonData[i].numero);",
                   "    }",
                   "}",
                   "function getMaxOfArray(numArray) {",
@@ -392,12 +392,12 @@
                 ],
                 "type": "text/javascript"
               },
-              "id": "7495217239093099002-0.84428144-955681214"
+              "id": "3441061165416298341-0.7206385-1327759104"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "2166008555006203425-0.47671622-112582212",
+                "id": "2666952952027744773-0.53031754-2115249196",
                 "exec": [
                   "pm.environment.unset(\"id\");",
                   "pm.environment.unset(\"dynamicBody\");"
@@ -407,7 +407,7 @@
             }
           ],
           "request": {
-            "description": "Get All - Modulos",
+            "description": "Get All - Scripts",
             "method": "GET",
             "header": [
               {
@@ -428,9 +428,9 @@
               }
             ],
             "url": {
-              "raw": "{{default_server_config}}/modulos/",
+              "raw": "{{default_server_config}}/scripts/",
               "path": [
-                "modulos",
+                "scripts",
                 ""
               ],
               "host": [
@@ -443,12 +443,12 @@
           ]
         },
         {
-          "name": "Get One Modulos",
+          "name": "Get One Scripts",
           "event": [
             {
               "listen": "test",
               "script": {
-                "id": "406004278851306020-0.6214441-512874375",
+                "id": "6442169683445623978-0.8777503-1014946879",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
@@ -462,12 +462,12 @@
                 ],
                 "type": "text/javascript"
               },
-              "id": "5839976909229002248-0.56460613-862740591"
+              "id": "5162469187622312001-0.30454743-1857100633"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "6426895240481914359-0.27809936-1138770650",
+                "id": "4661024530994568635-0.02713257-1836141683",
                 "exec": [
                   ""
                 ],
@@ -476,7 +476,7 @@
             }
           ],
           "request": {
-            "description": "Get One - Modulos",
+            "description": "Get One - Scripts",
             "method": "GET",
             "header": [
               {
@@ -497,9 +497,9 @@
               }
             ],
             "url": {
-              "raw": "{{default_server_config}}/modulos/{{id}}",
+              "raw": "{{default_server_config}}/scripts/{{id}}",
               "path": [
-                "modulos",
+                "scripts",
                 "{{id}}"
               ],
               "host": [
@@ -512,12 +512,12 @@
           ]
         },
         {
-          "name": "Add Modulos",
+          "name": "Add Scripts",
           "event": [
             {
               "listen": "test",
               "script": {
-                "id": "7811220581206240815-0.42560965-2063083680",
+                "id": "6204828613114759246-0.52660555-467366664",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
@@ -529,12 +529,12 @@
                 ],
                 "type": "text/javascript"
               },
-              "id": "5128037659786403143-0.46128923-1444954519"
+              "id": "826009796525839650-0.6729134-1605326442"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "7576490781361277780-0.3139391-431741234",
+                "id": "7051353113902922335-0.27544773-1955306387",
                 "exec": [
                   "var dynamicBody = pm.environment.get(\"dynamicBody\");",
                   "pm.environment.set(\"dynamicBody\", JSON.stringify(dynamicBody));",
@@ -545,7 +545,7 @@
             }
           ],
           "request": {
-            "description": "Add - Modulos",
+            "description": "Add - Scripts",
             "method": "POST",
             "header": [
               {
@@ -566,9 +566,9 @@
               }
             ],
             "url": {
-              "raw": "{{default_server_config}}/modulos/",
+              "raw": "{{default_server_config}}/scripts/",
               "path": [
-                "modulos",
+                "scripts",
                 ""
               ],
               "host": [
@@ -585,20 +585,20 @@
           ]
         },
         {
-          "name": "Update Modulos",
+          "name": "Update Scripts",
           "event": [
             {
               "listen": "test",
               "script": {
-                "id": "6356029606130909443-0.9690075-1685369814",
+                "id": "6629238763925628691-0.55343497-961388890",
                 "type": "text/javascript"
               },
-              "id": "8804171541423700517-0.64544713-465401102"
+              "id": "5941235925003442549-0.1711449-1629065881"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "8762444585486703228-0.077200234-840084373",
+                "id": "4948905811024217375-0.2828343-1324239856",
                 "exec": [
                   "pm.environment.get(\"id\")"
                 ],
@@ -607,7 +607,7 @@
             }
           ],
           "request": {
-            "description": "Update - Modulos",
+            "description": "Update - Scripts",
             "method": "PUT",
             "header": [
               {
@@ -628,9 +628,9 @@
               }
             ],
             "url": {
-              "raw": "{{default_server_config}}/modulos/{{id}}",
+              "raw": "{{default_server_config}}/scripts/{{id}}",
               "path": [
-                "modulos",
+                "scripts",
                 "{{id}}"
               ],
               "host": [
@@ -647,20 +647,20 @@
           ]
         },
         {
-          "name": "Delete Modulos",
+          "name": "Delete Scripts",
           "event": [
             {
               "listen": "test",
               "script": {
-                "id": "6747948915671622752-0.982355-213558922",
+                "id": "5869685432093102203-0.048394084-1328890286",
                 "type": "text/javascript"
               },
-              "id": "3556936870190903617-0.1294998-723558506"
+              "id": "7126096415875484682-0.08126366-1498876340"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "3922990922772524418-0.3732865-1231807580",
+                "id": "5599903688829058252-0.73371243-462912371",
                 "exec": [
                   "pm.environment.get(\"id\")"
                 ],
@@ -669,7 +669,7 @@
             }
           ],
           "request": {
-            "description": "Delete - Modulos",
+            "description": "Delete - Scripts",
             "method": "DELETE",
             "header": [
               {
@@ -690,9 +690,9 @@
               }
             ],
             "url": {
-              "raw": "{{default_server_config}}/modulos/{{id}}",
+              "raw": "{{default_server_config}}/scripts/{{id}}",
               "path": [
-                "modulos",
+                "scripts",
                 "{{id}}"
               ],
               "host": [
@@ -709,25 +709,25 @@
   ],
   "variable": [
     {
-      "id": "4120636736176759767-0.14088279-1555989406",
+      "id": "1641899534177471976-0.2394625-2041608025",
       "key": "default_server_config",
       "value": "http://localhost:8081/kwscontrole/erpweb",
       "type": "string"
     },
     {
-      "id": "806235187694842569-0.7900766-1653942046",
+      "id": "1557528799388573568-0.56030506-1348845577",
       "key": "erkusuario",
       "value": 83688,
       "type": "string"
     },
     {
-      "id": "5338335749600974377-0.40767342-1818454580",
+      "id": "1487723626593636501-0.59495914-885997246",
       "key": "erkfilial",
       "value": 18,
       "type": "string"
     },
     {
-      "id": "6606510712506858184-0.60077524-225643426",
+      "id": "4260215261648880411-0.8599863-138919302",
       "key": "id",
       "value": "",
       "type": "string"
@@ -737,7 +737,7 @@
     {
       "listen": "prerequest",
       "script": {
-        "id": "3053042810566753162-0.50997376-642472619",
+        "id": "135300568251604523-0.624301-1533180480",
         "type": "text/javascript",
         "exec": [
           ""
@@ -747,7 +747,7 @@
     {
       "listen": "test",
       "script": {
-        "id": "2117699440669415289-0.4397874-1803674940",
+        "id": "5370781285616316500-0.99323404-345853790",
         "type": "text/javascript",
         "exec": [
           ""
