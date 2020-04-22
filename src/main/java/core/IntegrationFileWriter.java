@@ -2,16 +2,14 @@ package core;
 
 import com.github.underscore.lodash.U;
 import com.google.gson.Gson;
-import model.EntityTestIntegrationVO;
+import com.google.gson.reflect.TypeToken;
+import model.EntityConfigVO;
 import model.ServerApplicationConfigVO;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
-public class IntegrationTestWriter {
+public class IntegrationFileWriter {
 
     private static String generateId() {
         StringBuilder sb = new StringBuilder();
@@ -91,7 +89,7 @@ public class IntegrationTestWriter {
         return variables;
     }
 
-    private static List<Map<String, Object>> generateOperation(EntityTestIntegrationVO entity, ServerApplicationConfigVO serverConfig) {
+    private static List<Map<String, Object>> generateOperation(EntityConfigVO entity, ServerApplicationConfigVO serverConfig) {
         String operation = "";
 
         operation = "Get All";
@@ -134,7 +132,7 @@ public class IntegrationTestWriter {
         return operations;
     }
 
-    private static Map<String, Object> generateRequestHttp(EntityTestIntegrationVO entity, String verb, String operation) {
+    private static Map<String, Object> generateRequestHttp(EntityConfigVO entity, String verb, String operation) {
         Map<String, Object> request = new LinkedHashMap<String, Object>();
         request.put("description", operation + " " + entity.getEntityName());
         request.put("method", verb);
@@ -320,12 +318,12 @@ public class IntegrationTestWriter {
     }
 
 
-    public static Map<String, Object> generateTestIntegration(List<EntityTestIntegrationVO> entityList, ServerApplicationConfigVO serverConfig) {
+    public static Map<String, Object> generateTestIntegration(List<EntityConfigVO> entityList, ServerApplicationConfigVO serverConfig) {
         Map<String, Object> exit = new LinkedHashMap<String, Object>();
         exit.put("info", generateInfo());
         List<Map<String, Object>> itens = new ArrayList<Map<String, Object>>();
 
-        for (EntityTestIntegrationVO entity : entityList) {
+        for (EntityConfigVO entity : entityList) {
             Map<String, Object> map = new LinkedHashMap<String, Object>();
             map.put("name", entity.getEntityName());
             map.put("item", generateOperation(entity, serverConfig));
@@ -350,4 +348,5 @@ public class IntegrationTestWriter {
             e.printStackTrace();
         }
     }
+
 }

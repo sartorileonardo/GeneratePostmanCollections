@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6707e41-9e13-4baa-b471-40f8bd6ca43f" name="Default Changelist" comment="" />
+    <list default="true" id="e6707e41-9e13-4baa-b471-40f8bd6ca43f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../backendgenerator/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backendgenerator/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backendgenerator/backEndGenerator.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backendgenerator/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backendgenerator/src/main/java/Main.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../backendgenerator" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -21,11 +32,12 @@
   <component name="ProjectId" id="1anuo8VmjmkoKdMSfFj2EVWoOeN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../java/kwscontrole/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backendgenerator/pom.xml" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="utils" />
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -86,5 +98,16 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/utils/ParseUtils.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

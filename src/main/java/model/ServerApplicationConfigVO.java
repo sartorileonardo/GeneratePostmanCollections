@@ -8,6 +8,7 @@ public class ServerApplicationConfigVO {
     private Integer erkFilial;
     private Integer timeOutRequest;
 
+
     public ServerApplicationConfigVO(String ip, Integer port, String defaultPath, Integer erkUsuario, Integer erkFilial, Integer timeOutRequest) {
         this.ip = ip;
         this.port = port;

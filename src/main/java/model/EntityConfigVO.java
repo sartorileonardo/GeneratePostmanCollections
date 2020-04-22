@@ -2,12 +2,12 @@ package model;
 
 import java.util.Map;
 
-public class EntityTestIntegrationVO {
+public class EntityConfigVO {
     private String entityName;
     private String pathName;
     private String primaryKeyName;
 
-    public EntityTestIntegrationVO(String entityName, String pathName, String primaryKeyName) {
+    public EntityConfigVO(String entityName, String pathName, String primaryKeyName) {
         this.entityName = entityName;
         this.pathName = pathName;
         this.primaryKeyName = primaryKeyName;

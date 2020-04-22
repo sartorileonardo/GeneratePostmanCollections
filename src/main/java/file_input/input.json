@@ -1,0 +1,22 @@
+{
+
+  "serverConfigVO":{
+    "ip":"localhost",
+    "port":8081,
+    "defaultPath":"/kwscontrole/erpweb",
+    "erkUsuario":83688,
+    "erkFilial":18,
+    "timeOutRequest":5000
+  },
+
+  "entities":[
+    {
+      "entityConfigVO":{
+        "entityName":"Telas",
+        "pathName":"telas",
+        "primaryKeyName":"codigo"
+      }
+    }
+  ]
+
+}

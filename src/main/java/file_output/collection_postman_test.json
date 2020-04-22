@@ -1,6 +1,6 @@
 {
   "info": {
-    "_postman_id": "7215371952077590228-0.5512825-859531352",
+    "_postman_id": "2375203662843692854-0.87329835-1063677514",
     "name": "Registers",
     "description": "My Registers (CRUD)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -15,7 +15,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "8310547058286124766-0.08097863-1764693525",
+                "id": "1281018043834764890-0.64036196-1878173598",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
@@ -30,12 +30,12 @@
                 ],
                 "type": "text/javascript"
               },
-              "id": "5517756471411245974-0.27545238-1041338442"
+              "id": "3315055207532800993-0.045689344-1137683090"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "3686722434111057150-0.8097144-427289018",
+                "id": "8178633213465081657-0.9995854-1246640953",
                 "exec": [
                   "pm.environment.unset(\"id\");",
                   "pm.environment.unset(\"dynamicBody\");"
@@ -86,18 +86,19 @@
             {
               "listen": "test",
               "script": {
-                "id": "594819782842403981-0.82360864-842327420",
+                "id": "2763471216041181655-0.051807523-275164656",
                 "exec": [
-                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\nvar responseBody = JSON.parse(responseBody);\n\nfunction generateRandomText(length){\n   var result           = '';\n   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';\n   var charactersLength = characters.length;\n   for ( var i = 0; i < length; i++ ) {\n      result += characters.charAt(Math.floor(Math.random() * charactersLength));\n   }\n   return result;\n}\n\nfunction generateRandomNumber(length){\n    return Math.floor(Math.random() * length);\n}\n\nfunction replacePrimaryKey(entity){\n    if(isNaN(entity.codigo)){\n        entity.codigo = generateRandomText(generateRandomNumber(entity.codigo.length));\n        console.log(\"Is not a number.\");\n    }else{\n        entity.codigo = \"test\"+generateRandomNumber(entity.codigo.length);\n        console.log(\"Is number.\");\n    }\n    return entity;\n}\n\npm.environment.set('dynamicBody', replacePrimaryKey(responseBody));\nconsole.log(pm.environment.get(\"dynamicBody\"));"
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\nvar responseBody = JSON.parse(responseBody);\n\nfunction generateRandomText(length){\n   var result           = '';\n   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';\n   var charactersLength = characters.length;\n   for ( var i = 0; i < length; i++ ) {\n      result += characters.charAt(Math.floor(Math.random() * charactersLength));\n   }\n   return result;\n}\n\nfunction generateRandomNumber(length){\n    return Math.floor(Math.random() * length);\n}\n\nfunction replacePrimaryKey(entity){\n    if(isNaN(entity.codigo)){\n        entity.codigo = generateRandomText(generateRandomNumber(entity.codigo.length));\n        console.log(\"Is not a number.\");\n    }",
+                  "    return entity;\n}\n\npm.environment.set('dynamicBody', replacePrimaryKey(responseBody));\nconsole.log(pm.environment.get(\"dynamicBody\"));"
                 ],
                 "type": "text/javascript"
               },
-              "id": "6453708764811088748-0.8512015-618189414"
+              "id": "5703555776769669218-0.7815407-1077607607"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "4332406495762438942-0.3751992-1912943299",
+                "id": "4787159375985316979-0.121653736-826417122",
                 "exec": [
                   ""
                 ],
@@ -147,7 +148,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "8335429335390289068-0.9245448-1239145794",
+                "id": "6396781294818396254-0.07158166-162371368",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
@@ -159,12 +160,12 @@
                 ],
                 "type": "text/javascript"
               },
-              "id": "2918085631688328224-0.5417844-139135071"
+              "id": "6618806016428915442-0.2928394-1401813785"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "8750011974276213334-0.3017311-1899459160",
+                "id": "7026260681101422056-0.15217876-1773256803",
                 "exec": [
                   "var dynamicBody = pm.environment.get(\"dynamicBody\");",
                   "pm.environment.set(\"dynamicBody\", JSON.stringify(dynamicBody));",
@@ -220,15 +221,15 @@
             {
               "listen": "test",
               "script": {
-                "id": "5743435479551586865-0.009016097-709677619",
+                "id": "6872704054154547296-0.919753-78101215",
                 "type": "text/javascript"
               },
-              "id": "5350003553067878576-0.27765685-1870071301"
+              "id": "3554679126356743429-0.815953-1965848396"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "2671120930591166119-0.17198694-1830706851",
+                "id": "3702536155553214352-0.38252634-799158769",
                 "exec": [
                   "pm.environment.get(\"id\")"
                 ],
@@ -282,15 +283,15 @@
             {
               "listen": "test",
               "script": {
-                "id": "2818767151224078860-0.21634972-1450127116",
+                "id": "557894727878603955-0.44385546-1160318749",
                 "type": "text/javascript"
               },
-              "id": "5945987808131035102-0.26698643-1904408937"
+              "id": "9172722700123675785-0.82179695-1235474129"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "5687848644276274165-0.059233963-117305286",
+                "id": "1857394549392318745-0.6735043-2014573913",
                 "exec": [
                   "pm.environment.get(\"id\")"
                 ],
@@ -335,359 +336,29 @@
           ]
         }
       ]
-    },
-    {
-      "name": "Especies",
-      "item": [
-        {
-          "name": "Get All Especies",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "8056965811011398571-0.28150356-109759172",
-                "exec": [
-                  "pm.test(\"Status code is 200\", function () {",
-                  "    pm.response.to.have.status(200);",
-                  "});",
-                  "pm.test(\"Response time is less than 5000ms\", function () {",
-                  "    pm.expect(pm.response.responseTime).to.be.below(5000);",
-                  "});",
-                  "",
-                  "var jsonData = pm.response.json();",
-                  "pm.environment.set(\"id\", jsonData[jsonData.sort().length-1].codigo);",
-                  "console.log(pm.environment.get(\"id\"));"
-                ],
-                "type": "text/javascript"
-              },
-              "id": "756271251154906055-0.10232079-1219610211"
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "4416830481345496780-0.80045813-1232081612",
-                "exec": [
-                  "pm.environment.unset(\"id\");",
-                  "pm.environment.unset(\"dynamicBody\");"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "description": "Get All - Especies",
-            "method": "GET",
-            "header": [
-              {
-                "key": "erkfilial",
-                "type": "text",
-                "value": "{{erkfilial}}"
-              },
-              {
-                "key": "erkusuario",
-                "type": "text",
-                "value": "{{erkusuario}}"
-              },
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "type": "text",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{default_server_config}}/especies/",
-              "path": [
-                "especies",
-                ""
-              ],
-              "host": [
-                "{{default_server_config}}"
-              ]
-            }
-          },
-          "response": [
-            ""
-          ]
-        },
-        {
-          "name": "Get One Especies",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "7610212161500641513-0.5578202-575932828",
-                "exec": [
-                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\nvar responseBody = JSON.parse(responseBody);\n\nfunction generateRandomText(length){\n   var result           = '';\n   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';\n   var charactersLength = characters.length;\n   for ( var i = 0; i < length; i++ ) {\n      result += characters.charAt(Math.floor(Math.random() * charactersLength));\n   }\n   return result;\n}\n\nfunction generateRandomNumber(length){\n    return Math.floor(Math.random() * length);\n}\n\nfunction replacePrimaryKey(entity){\n    if(isNaN(entity.codigo)){\n        entity.codigo = generateRandomText(generateRandomNumber(entity.codigo.length));\n        console.log(\"Is not a number.\");\n    }else{\n        entity.codigo = \"test\"+generateRandomNumber(entity.codigo.length);\n        console.log(\"Is number.\");\n    }\n    return entity;\n}\n\npm.environment.set('dynamicBody', replacePrimaryKey(responseBody));\nconsole.log(pm.environment.get(\"dynamicBody\"));"
-                ],
-                "type": "text/javascript"
-              },
-              "id": "871438518534725882-0.5326696-1201945353"
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "4643992296019054109-0.08480674-1236725058",
-                "exec": [
-                  ""
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "description": "Get One - Especies",
-            "method": "GET",
-            "header": [
-              {
-                "key": "erkfilial",
-                "type": "text",
-                "value": "{{erkfilial}}"
-              },
-              {
-                "key": "erkusuario",
-                "type": "text",
-                "value": "{{erkusuario}}"
-              },
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "type": "text",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{default_server_config}}/especies/{{id}}",
-              "path": [
-                "especies",
-                "{{id}}"
-              ],
-              "host": [
-                "{{default_server_config}}"
-              ]
-            }
-          },
-          "response": [
-            ""
-          ]
-        },
-        {
-          "name": "Add Especies",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "1018587928044079084-0.94235784-1058399110",
-                "exec": [
-                  "pm.test(\"Status code is 200\", function () {",
-                  "    pm.response.to.have.status(200);",
-                  "});",
-                  "pm.test(\"Response time is less than 5000ms\", function () {",
-                  "    pm.expect(pm.response.responseTime).to.be.below(5000);",
-                  "});",
-                  "pm.environment.set(\"id\", pm.response.json());"
-                ],
-                "type": "text/javascript"
-              },
-              "id": "290931413413961033-0.8050791-348221826"
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "1186512246173516586-0.23864233-1291829881",
-                "exec": [
-                  "var dynamicBody = pm.environment.get(\"dynamicBody\");",
-                  "pm.environment.set(\"dynamicBody\", JSON.stringify(dynamicBody));",
-                  "pm.environment.get(\"dynamicBody\");"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "description": "Add - Especies",
-            "method": "POST",
-            "header": [
-              {
-                "key": "erkfilial",
-                "type": "text",
-                "value": "{{erkfilial}}"
-              },
-              {
-                "key": "erkusuario",
-                "type": "text",
-                "value": "{{erkusuario}}"
-              },
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "type": "text",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{default_server_config}}/especies/",
-              "path": [
-                "especies",
-                ""
-              ],
-              "host": [
-                "{{default_server_config}}"
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{{dynamicBody}}"
-            }
-          },
-          "response": [
-            ""
-          ]
-        },
-        {
-          "name": "Update Especies",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "3731432094115324020-0.96222275-759797804",
-                "type": "text/javascript"
-              },
-              "id": "948571366521874468-0.005680859-264112135"
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "2115596641298159220-0.6152615-1326800453",
-                "exec": [
-                  "pm.environment.get(\"id\")"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "description": "Update - Especies",
-            "method": "PUT",
-            "header": [
-              {
-                "key": "erkfilial",
-                "type": "text",
-                "value": "{{erkfilial}}"
-              },
-              {
-                "key": "erkusuario",
-                "type": "text",
-                "value": "{{erkusuario}}"
-              },
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "type": "text",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{default_server_config}}/especies/{{id}}",
-              "path": [
-                "especies",
-                "{{id}}"
-              ],
-              "host": [
-                "{{default_server_config}}"
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{{dynamicBody}}"
-            }
-          },
-          "response": [
-            ""
-          ]
-        },
-        {
-          "name": "Delete Especies",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "id": "8451513783652999928-0.16762936-276477042",
-                "type": "text/javascript"
-              },
-              "id": "190242067678830813-0.61426365-2068669116"
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "id": "3209858947310453388-0.9431022-1098774089",
-                "exec": [
-                  "pm.environment.get(\"id\")"
-                ],
-                "type": "text/javascript"
-              }
-            }
-          ],
-          "request": {
-            "description": "Delete - Especies",
-            "method": "DELETE",
-            "header": [
-              {
-                "key": "erkfilial",
-                "type": "text",
-                "value": "{{erkfilial}}"
-              },
-              {
-                "key": "erkusuario",
-                "type": "text",
-                "value": "{{erkusuario}}"
-              },
-              {
-                "key": "Content-Type",
-                "name": "Content-Type",
-                "type": "text",
-                "value": "application/json"
-              }
-            ],
-            "url": {
-              "raw": "{{default_server_config}}/especies/{{id}}",
-              "path": [
-                "especies",
-                "{{id}}"
-              ],
-              "host": [
-                "{{default_server_config}}"
-              ]
-            }
-          },
-          "response": [
-            ""
-          ]
-        }
-      ]
     }
   ],
   "variable": [
     {
-      "id": "3245146071748280174-0.99776757-740892702",
+      "id": "4211963817445086646-0.2858522-1607104923",
       "key": "default_server_config",
       "value": "http://localhost:8081/kwscontrole/erpweb",
       "type": "string"
     },
     {
-      "id": "179417508241244783-0.294459-2108676949",
+      "id": "1981108933488238448-0.13398218-2097281182",
       "key": "erkusuario",
       "value": 83688,
       "type": "string"
     },
     {
-      "id": "8079034197471313216-0.017292023-288093117",
+      "id": "2293288208770016580-0.64000905-2054971822",
       "key": "erkfilial",
       "value": 18,
       "type": "string"
     },
     {
-      "id": "8888581748756020174-0.24151355-1309421530",
+      "id": "8180131039182110331-0.40534753-232287197",
       "key": "id",
       "value": "",
       "type": "string"
@@ -697,7 +368,7 @@
     {
       "listen": "prerequest",
       "script": {
-        "id": "4346847033143323378-0.5856507-1661284123",
+        "id": "5342595353392087770-0.74872416-330849276",
         "type": "text/javascript",
         "exec": [
           ""
@@ -707,7 +378,7 @@
     {
       "listen": "test",
       "script": {
-        "id": "6421484164986915622-0.6286191-308648589",
+        "id": "8661200685444817490-0.12793875-95295400",
         "type": "text/javascript",
         "exec": [
           ""

@@ -1,9 +1,18 @@
-import core.IntegrationTestWriter;
-import model.EntityTestIntegrationVO;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import core.IntegrationFileWriter;
+import model.EntityConfigVO;
 import model.ServerApplicationConfigVO;
+import model.TestIntegrationVO;
+import utils.ParseUtils;
 
-import java.util.Arrays;
+import java.io.File;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 /*
 @author: Leonardo Sartori
 @contact: leonardos@koerich.com.br / leonardogt4@hotmail.com
@@ -11,31 +20,14 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-        //My config server application'
-        ServerApplicationConfigVO serverConfig = new ServerApplicationConfigVO(
-                "localhost",
-                8081,
-                "/kwscontrole/erpweb",
-                83688,
-                18,
-                5000);
 
-        //Names from my entities
-        List<EntityTestIntegrationVO> entityList = Arrays.asList(
-                getEntityInstance("Telas", "telas", "codigo"),
-                //getEntityInstance("Scripts", "scripts", "numero")
-                getEntityInstance("Especies", "especies", "codigo")
-        );
-
-        generate(entityList, serverConfig);
+        File jsonFile = new File("src/main/java/file_input/input.json");
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map<String, Object> mapObject = objectMapper.readValue(jsonFile,
+                new TypeReference<Map<String, Object>>() {
+                });
+        TestIntegrationVO testIntegrationVO = ParseUtils.getMapToTestIntegrationVO(mapObject);
+        IntegrationFileWriter.writeJSON(IntegrationFileWriter.generateTestIntegration(testIntegrationVO.getEntities(), testIntegrationVO.getServerConfigVO()), "src/main/java/file_output/", "collection_postman_test.json");
     }
-    private static void generate(List<EntityTestIntegrationVO> entityList, ServerApplicationConfigVO server) {
-        IntegrationTestWriter.writeJSON(IntegrationTestWriter.generateTestIntegration(entityList, server), "src/main/java/file_output/", "collection_postman_test.json");
-    }
-
-    private static EntityTestIntegrationVO getEntityInstance(String entityName, String pathName, String primaryKeyName) {
-        return new EntityTestIntegrationVO(entityName, pathName, primaryKeyName);
-    }
-
 
 }

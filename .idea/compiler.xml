@@ -9,5 +9,8 @@
         <module name="testeintegracaogenerator" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="backEndGenerator" target="6" />
+    </bytecodeTargetLevel>
   </component>
 </project>
