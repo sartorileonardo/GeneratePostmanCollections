@@ -10,13 +10,18 @@
   },
 
   "entities":[
-    {
-      "entityConfigVO":{
+
+      {
         "entityName":"Telas",
         "pathName":"telas",
         "primaryKeyName":"codigo"
+      },
+      {
+        "entityName":"Scripts",
+        "pathName":"scripts",
+        "primaryKeyName":"numero"
       }
-    }
+
   ]
 
 }

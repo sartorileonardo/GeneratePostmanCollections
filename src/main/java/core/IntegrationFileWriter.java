@@ -252,15 +252,15 @@ public class IntegrationFileWriter {
                             "    return Math.floor(Math.random() * length);\n" +
                             "}\n" +
                             "\n" +
-                            "function replacePrimaryKey(entity){\n" +
-                            "    if(isNaN(entity.codigo)){\n" +
-                            "        entity.codigo = generateRandomText(generateRandomNumber(entity.codigo.length));\n" +
+                            "function formatterPrimaryKey(entity){\n" +
+                            "    if(typeof entity."+primaryKeyName+" == 'number'){\n" +
+                            "        entity."+primaryKeyName+" = generateRandomText(generateRandomNumber(entity."+primaryKeyName+".length));\n" +
                             "        console.log(\"Is not a number.\");\n" +
                             "    }",
                             "    return entity;\n" +
                             "}\n" +
                             "\n" +
-                            "pm.environment.set('dynamicBody', replacePrimaryKey(responseBody));\n" +
+                            "pm.environment.set('dynamicBody', formatterPrimaryKey(responseBody));\n" +
                             "console.log(pm.environment.get(\"dynamicBody\"));"
             ));
         }
@@ -349,4 +349,11 @@ public class IntegrationFileWriter {
         }
     }
 
+    public static File getJsonFile() throws Exception {
+        try{
+            return new File("src/main/java/file_input/input.json");
+        } catch (Exception e) {
+            throw new Exception("Ocorreu um erro ao obter o arquivo de input.json. "+e.getMessage());
+        }
+    }
 }

@@ -21,11 +21,8 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        File jsonFile = new File("src/main/java/file_input/input.json");
         ObjectMapper objectMapper = new ObjectMapper();
-        Map<String, Object> mapObject = objectMapper.readValue(jsonFile,
-                new TypeReference<Map<String, Object>>() {
-                });
+        Map<String, Object> mapObject = objectMapper.readValue(IntegrationFileWriter.getJsonFile(), new TypeReference<Map<String, Object>>() {});
         TestIntegrationVO testIntegrationVO = ParseUtils.getMapToTestIntegrationVO(mapObject);
         IntegrationFileWriter.writeJSON(IntegrationFileWriter.generateTestIntegration(testIntegrationVO.getEntities(), testIntegrationVO.getServerConfigVO()), "src/main/java/file_output/", "collection_postman_test.json");
     }

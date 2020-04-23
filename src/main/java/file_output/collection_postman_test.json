@@ -1,6 +1,6 @@
 {
   "info": {
-    "_postman_id": "2375203662843692854-0.87329835-1063677514",
+    "_postman_id": "7135172530794066878-0.1756252-770282599",
     "name": "Registers",
     "description": "My Registers (CRUD)",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -15,7 +15,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "1281018043834764890-0.64036196-1878173598",
+                "id": "4863925746505906952-0.6048055-1850509951",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
@@ -30,12 +30,12 @@
                 ],
                 "type": "text/javascript"
               },
-              "id": "3315055207532800993-0.045689344-1137683090"
+              "id": "6155980617538141378-0.90001607-332628937"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "8178633213465081657-0.9995854-1246640953",
+                "id": "4355354324700241428-0.78696424-711407562",
                 "exec": [
                   "pm.environment.unset(\"id\");",
                   "pm.environment.unset(\"dynamicBody\");"
@@ -86,19 +86,19 @@
             {
               "listen": "test",
               "script": {
-                "id": "2763471216041181655-0.051807523-275164656",
+                "id": "5176459269975313969-0.57309145-7050646",
                 "exec": [
-                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\nvar responseBody = JSON.parse(responseBody);\n\nfunction generateRandomText(length){\n   var result           = '';\n   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';\n   var charactersLength = characters.length;\n   for ( var i = 0; i < length; i++ ) {\n      result += characters.charAt(Math.floor(Math.random() * charactersLength));\n   }\n   return result;\n}\n\nfunction generateRandomNumber(length){\n    return Math.floor(Math.random() * length);\n}\n\nfunction replacePrimaryKey(entity){\n    if(isNaN(entity.codigo)){\n        entity.codigo = generateRandomText(generateRandomNumber(entity.codigo.length));\n        console.log(\"Is not a number.\");\n    }",
-                  "    return entity;\n}\n\npm.environment.set('dynamicBody', replacePrimaryKey(responseBody));\nconsole.log(pm.environment.get(\"dynamicBody\"));"
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\nvar responseBody = JSON.parse(responseBody);\n\nfunction generateRandomText(length){\n   var result           = '';\n   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';\n   var charactersLength = characters.length;\n   for ( var i = 0; i < length; i++ ) {\n      result += characters.charAt(Math.floor(Math.random() * charactersLength));\n   }\n   return result;\n}\n\nfunction generateRandomNumber(length){\n    return Math.floor(Math.random() * length);\n}\n\nfunction formatterPrimaryKey(entity){\n    if(typeof entity.codigo == 'number'){\n        entity.codigo = generateRandomText(generateRandomNumber(entity.codigo.length));\n        console.log(\"Is not a number.\");\n    }",
+                  "    return entity;\n}\n\npm.environment.set('dynamicBody', formatterPrimaryKey(responseBody));\nconsole.log(pm.environment.get(\"dynamicBody\"));"
                 ],
                 "type": "text/javascript"
               },
-              "id": "5703555776769669218-0.7815407-1077607607"
+              "id": "3124666290167670836-0.9934218-1289722774"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "4787159375985316979-0.121653736-826417122",
+                "id": "5170092185244183433-0.3231008-869897356",
                 "exec": [
                   ""
                 ],
@@ -148,7 +148,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "6396781294818396254-0.07158166-162371368",
+                "id": "8009959951389200863-0.1517359-1922773648",
                 "exec": [
                   "pm.test(\"Status code is 200\", function () {",
                   "    pm.response.to.have.status(200);",
@@ -160,12 +160,12 @@
                 ],
                 "type": "text/javascript"
               },
-              "id": "6618806016428915442-0.2928394-1401813785"
+              "id": "8573757020098989930-0.8829347-1701079238"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "7026260681101422056-0.15217876-1773256803",
+                "id": "336296953135631574-0.18798631-1036626934",
                 "exec": [
                   "var dynamicBody = pm.environment.get(\"dynamicBody\");",
                   "pm.environment.set(\"dynamicBody\", JSON.stringify(dynamicBody));",
@@ -221,15 +221,15 @@
             {
               "listen": "test",
               "script": {
-                "id": "6872704054154547296-0.919753-78101215",
+                "id": "468050062362947252-0.14353883-1738664289",
                 "type": "text/javascript"
               },
-              "id": "3554679126356743429-0.815953-1965848396"
+              "id": "3527205644140132031-0.48705214-1880804924"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "3702536155553214352-0.38252634-799158769",
+                "id": "3384997703211492311-0.16715097-1086894589",
                 "exec": [
                   "pm.environment.get(\"id\")"
                 ],
@@ -283,15 +283,15 @@
             {
               "listen": "test",
               "script": {
-                "id": "557894727878603955-0.44385546-1160318749",
+                "id": "7881094131080338661-0.7093683-564035887",
                 "type": "text/javascript"
               },
-              "id": "9172722700123675785-0.82179695-1235474129"
+              "id": "7389272916454296884-0.09384191-1040820279"
             },
             {
               "listen": "prerequest",
               "script": {
-                "id": "1857394549392318745-0.6735043-2014573913",
+                "id": "4001851790836175627-0.17649424-715567638",
                 "exec": [
                   "pm.environment.get(\"id\")"
                 ],
@@ -336,29 +336,360 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Scripts",
+      "item": [
+        {
+          "name": "Get All Scripts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "1737709547899080641-0.023290038-137986599",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response time is less than 5000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(5000);",
+                  "});",
+                  "",
+                  "var jsonData = pm.response.json();",
+                  "pm.environment.set(\"id\", jsonData[jsonData.sort().length-1].numero);",
+                  "console.log(pm.environment.get(\"id\"));"
+                ],
+                "type": "text/javascript"
+              },
+              "id": "4947898705514040757-0.16545051-1745185168"
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "510446011595767564-0.042623222-1896327036",
+                "exec": [
+                  "pm.environment.unset(\"id\");",
+                  "pm.environment.unset(\"dynamicBody\");"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "description": "Get All - Scripts",
+            "method": "GET",
+            "header": [
+              {
+                "key": "erkfilial",
+                "type": "text",
+                "value": "{{erkfilial}}"
+              },
+              {
+                "key": "erkusuario",
+                "type": "text",
+                "value": "{{erkusuario}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{default_server_config}}/scripts/",
+              "path": [
+                "scripts",
+                ""
+              ],
+              "host": [
+                "{{default_server_config}}"
+              ]
+            }
+          },
+          "response": [
+            ""
+          ]
+        },
+        {
+          "name": "Get One Scripts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "5043005576887789928-0.18486166-1583766073",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\npm.test(\"Response time is less than 5000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(5000);\n});\nvar responseBody = JSON.parse(responseBody);\n\nfunction generateRandomText(length){\n   var result           = '';\n   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';\n   var charactersLength = characters.length;\n   for ( var i = 0; i < length; i++ ) {\n      result += characters.charAt(Math.floor(Math.random() * charactersLength));\n   }\n   return result;\n}\n\nfunction generateRandomNumber(length){\n    return Math.floor(Math.random() * length);\n}\n\nfunction formatterPrimaryKey(entity){\n    if(typeof entity.numero == 'number'){\n        entity.numero = generateRandomText(generateRandomNumber(entity.numero.length));\n        console.log(\"Is not a number.\");\n    }",
+                  "    return entity;\n}\n\npm.environment.set('dynamicBody', formatterPrimaryKey(responseBody));\nconsole.log(pm.environment.get(\"dynamicBody\"));"
+                ],
+                "type": "text/javascript"
+              },
+              "id": "7043909927241468812-0.5191152-309765329"
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "6397378111390653825-0.80731076-703970119",
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "description": "Get One - Scripts",
+            "method": "GET",
+            "header": [
+              {
+                "key": "erkfilial",
+                "type": "text",
+                "value": "{{erkfilial}}"
+              },
+              {
+                "key": "erkusuario",
+                "type": "text",
+                "value": "{{erkusuario}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{default_server_config}}/scripts/{{id}}",
+              "path": [
+                "scripts",
+                "{{id}}"
+              ],
+              "host": [
+                "{{default_server_config}}"
+              ]
+            }
+          },
+          "response": [
+            ""
+          ]
+        },
+        {
+          "name": "Add Scripts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "2323039279078156667-0.9398178-1360790730",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "pm.test(\"Response time is less than 5000ms\", function () {",
+                  "    pm.expect(pm.response.responseTime).to.be.below(5000);",
+                  "});",
+                  "pm.environment.set(\"id\", pm.response.json());"
+                ],
+                "type": "text/javascript"
+              },
+              "id": "8327255456855938599-0.41752458-60442917"
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "2667244726390645501-0.084260345-1892514171",
+                "exec": [
+                  "var dynamicBody = pm.environment.get(\"dynamicBody\");",
+                  "pm.environment.set(\"dynamicBody\", JSON.stringify(dynamicBody));",
+                  "pm.environment.get(\"dynamicBody\");"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "description": "Add - Scripts",
+            "method": "POST",
+            "header": [
+              {
+                "key": "erkfilial",
+                "type": "text",
+                "value": "{{erkfilial}}"
+              },
+              {
+                "key": "erkusuario",
+                "type": "text",
+                "value": "{{erkusuario}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{default_server_config}}/scripts/",
+              "path": [
+                "scripts",
+                ""
+              ],
+              "host": [
+                "{{default_server_config}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{{dynamicBody}}"
+            }
+          },
+          "response": [
+            ""
+          ]
+        },
+        {
+          "name": "Update Scripts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "6017583846335382357-0.031021535-28209971",
+                "type": "text/javascript"
+              },
+              "id": "7400493293108889064-0.4141134-1757759083"
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "28661169651649870-0.36399597-1207383281",
+                "exec": [
+                  "pm.environment.get(\"id\")"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "description": "Update - Scripts",
+            "method": "PUT",
+            "header": [
+              {
+                "key": "erkfilial",
+                "type": "text",
+                "value": "{{erkfilial}}"
+              },
+              {
+                "key": "erkusuario",
+                "type": "text",
+                "value": "{{erkusuario}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{default_server_config}}/scripts/{{id}}",
+              "path": [
+                "scripts",
+                "{{id}}"
+              ],
+              "host": [
+                "{{default_server_config}}"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{{dynamicBody}}"
+            }
+          },
+          "response": [
+            ""
+          ]
+        },
+        {
+          "name": "Delete Scripts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "2908788113195888610-0.038223803-59443185",
+                "type": "text/javascript"
+              },
+              "id": "2894920779842973263-0.87433064-1332999727"
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "id": "4118884110310417304-0.35781193-552214431",
+                "exec": [
+                  "pm.environment.get(\"id\")"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "description": "Delete - Scripts",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "erkfilial",
+                "type": "text",
+                "value": "{{erkfilial}}"
+              },
+              {
+                "key": "erkusuario",
+                "type": "text",
+                "value": "{{erkusuario}}"
+              },
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{default_server_config}}/scripts/{{id}}",
+              "path": [
+                "scripts",
+                "{{id}}"
+              ],
+              "host": [
+                "{{default_server_config}}"
+              ]
+            }
+          },
+          "response": [
+            ""
+          ]
+        }
+      ]
     }
   ],
   "variable": [
     {
-      "id": "4211963817445086646-0.2858522-1607104923",
+      "id": "1093927988912926310-0.6522894-1582765404",
       "key": "default_server_config",
       "value": "http://localhost:8081/kwscontrole/erpweb",
       "type": "string"
     },
     {
-      "id": "1981108933488238448-0.13398218-2097281182",
+      "id": "1113341652605666455-0.7755481-936257893",
       "key": "erkusuario",
       "value": 83688,
       "type": "string"
     },
     {
-      "id": "2293288208770016580-0.64000905-2054971822",
+      "id": "4946651218989612874-0.70789695-895137402",
       "key": "erkfilial",
       "value": 18,
       "type": "string"
     },
     {
-      "id": "8180131039182110331-0.40534753-232287197",
+      "id": "1438302379582103256-0.7043366-1936537901",
       "key": "id",
       "value": "",
       "type": "string"
@@ -368,7 +699,7 @@
     {
       "listen": "prerequest",
       "script": {
-        "id": "5342595353392087770-0.74872416-330849276",
+        "id": "4093897481091452317-0.9694993-1993130401",
         "type": "text/javascript",
         "exec": [
           ""
@@ -378,7 +709,7 @@
     {
       "listen": "test",
       "script": {
-        "id": "8661200685444817490-0.12793875-95295400",
+        "id": "8406898480529229540-0.6768991-803449993",
         "type": "text/javascript",
         "exec": [
           ""

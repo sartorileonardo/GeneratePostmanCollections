@@ -36,8 +36,7 @@ public class ParseUtils {
             );
 
             for (Map<String, Object> entityMap : entitiesMap) {
-                Map<String, Object> newEntity = (Map<String, Object>) entityMap.get("entityConfigVO");
-                EntityConfigVO entityConfigVO = new EntityConfigVO((String)newEntity.get("entityName"), (String)newEntity.get("pathName"), (String)newEntity.get("primaryKeyName"));
+                EntityConfigVO entityConfigVO = new EntityConfigVO((String)entityMap.get("entityName"), (String)entityMap.get("pathName"), (String)entityMap.get("primaryKeyName"));
                 entities.add(entityConfigVO);
             }
 
