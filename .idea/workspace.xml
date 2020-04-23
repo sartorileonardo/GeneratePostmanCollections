@@ -4,10 +4,6 @@
     <list default="true" id="e6707e41-9e13-4baa-b471-40f8bd6ca43f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/IntegrationFileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/IntegrationFileWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/file_input/input.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/file_input/input.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/file_output/collection_postman_test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/file_output/collection_postman_test.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/ParseUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/ParseUtils.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

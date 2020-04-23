@@ -1,16 +1,9 @@
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
 import core.IntegrationFileWriter;
-import model.EntityConfigVO;
-import model.ServerApplicationConfigVO;
 import model.TestIntegrationVO;
 import utils.ParseUtils;
 
-import java.io.File;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /*
