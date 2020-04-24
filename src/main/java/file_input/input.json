@@ -12,6 +12,11 @@
   "entities":[
 
       {
+        "entityName":"Gerenciais",
+        "pathName":"gerenciais",
+        "primaryKeyName":"codigo"
+      },
+      {
         "entityName":"Telas",
         "pathName":"telas",
         "primaryKeyName":"codigo"
@@ -20,6 +25,86 @@
         "entityName":"Scripts",
         "pathName":"scripts",
         "primaryKeyName":"numero"
+      },
+      {
+        "entityName":"AgrupadoresTiposPlanos",
+        "pathName":"agrupadorestiposplanos",
+        "primaryKeyName":"codigo"
+      },
+      {
+        "entityName":"Cards",
+        "pathName":"cards",
+        "primaryKeyName":"codigo"
+      },
+      {
+        "entityName":"FrequenciasEntregas",
+        "pathName":"frequenciasentregas",
+        "primaryKeyName":"codigo"
+      },
+      {
+        "entityName":"Impressoras",
+        "pathName":"impressoras",
+        "primaryKeyName":"codigo"
+      },
+      {
+        "entityName":"Livros",
+        "pathName":"livros",
+        "primaryKeyName":"codigo"
+      },
+      {
+        "entityName":"LivrosContabeis",
+        "pathName":"livroscontabeis",
+        "primaryKeyName":"codigo"
+      },
+      {
+        "entityName":"Marcas",
+        "pathName":"marcas",
+        "primaryKeyName":"codigo"
+      },
+      {
+        "entityName":"MenuItens",
+        "pathName":"menuitens",
+        "primaryKeyName":"codigo"
+      },
+      {
+        "entityName":"Setores",
+        "pathName":"setores",
+        "primaryKeyName":"codigo"
+      },
+      {
+        "entityName":"SubGrupos",
+        "pathName":"subgrupos",
+        "primaryKeyName":"codigo"
+      },
+      {
+        "entityName":"TefPagamentos",
+        "pathName":"tefpagamentos",
+        "primaryKeyName":"numero"
+      },
+      {
+        "entityName":"TefSubModalidades",
+        "pathName":"tefsubmodalidades",
+        "primaryKeyName":"numero"
+      },
+      {
+        "entityName":"TiposCreditosClientes",
+        "pathName":"tiposcreditosclientes",
+        "primaryKeyName":"codigo"
+      },
+      {
+        "entityName":"TiposCreditosFornecedores",
+        "pathName":"tiposcreditosfornecedores",
+        "primaryKeyName":"codigo"
+      },
+      {
+        "entityName":"TiposReservas",
+        "pathName":"tiposreservas",
+        "primaryKeyName":"numero"
+      },
+      {
+        "entityName":"VariaveisSimulacoesPrecos",
+        "pathName":"variaveissimulacoesprecos",
+        "primaryKeyName":"codigo"
       }
 
   ]

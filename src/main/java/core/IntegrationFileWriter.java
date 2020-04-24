@@ -62,7 +62,7 @@ public class IntegrationFileWriter {
         Map<String, Object> default_server_config = new LinkedHashMap<String, Object>();
         default_server_config.put("id", generateId());
         default_server_config.put("key", "default_server_config");
-        default_server_config.put("value", "http://"+serverConfig.getIp()+":"+serverConfig.getPort()+serverConfig.getDefaultPath());
+        default_server_config.put("value", "http://" + serverConfig.getIp() + ":" + serverConfig.getPort() + serverConfig.getDefaultPath());
         default_server_config.put("type", "string");
 
         Map<String, Object> erkFilial = new LinkedHashMap<String, Object>();
@@ -218,12 +218,12 @@ public class IntegrationFileWriter {
                     "pm.test(\"Status code is 200\", function () {",
                     "    pm.response.to.have.status(200);",
                     "});",
-                    "pm.test(\"Response time is less than "+serverConfig.getTimeOutRequest()+"ms\", function () {",
-                    "    pm.expect(pm.response.responseTime).to.be.below("+serverConfig.getTimeOutRequest()+");",
+                    "pm.test(\"Response time is less than " + serverConfig.getTimeOutRequest() + "ms\", function () {",
+                    "    pm.expect(pm.response.responseTime).to.be.below(" + serverConfig.getTimeOutRequest() + ");",
                     "});",
                     "",
                     "var jsonData = pm.response.json();",
-                    "pm.environment.set(\"id\", jsonData[jsonData.sort().length-1]."+primaryKeyName+");",
+                    "pm.environment.set(\"id\", jsonData[jsonData.sort().length-1]." + primaryKeyName + ");",
                     "console.log(pm.environment.get(\"id\"));"
             ));
         }
@@ -233,8 +233,8 @@ public class IntegrationFileWriter {
                     "pm.test(\"Status code is 200\", function () {\n" +
                             "    pm.response.to.have.status(200);\n" +
                             "});\n" +
-                            "pm.test(\"Response time is less than "+serverConfig.getTimeOutRequest()+"ms\", function () {\n" +
-                            "    pm.expect(pm.response.responseTime).to.be.below("+serverConfig.getTimeOutRequest()+");\n" +
+                            "pm.test(\"Response time is less than " + serverConfig.getTimeOutRequest() + "ms\", function () {\n" +
+                            "    pm.expect(pm.response.responseTime).to.be.below(" + serverConfig.getTimeOutRequest() + ");\n" +
                             "});\n" +
                             "var responseBody = JSON.parse(responseBody);\n" +
                             "\n" +
@@ -251,13 +251,20 @@ public class IntegrationFileWriter {
                             "function generateRandomNumber(length){\n" +
                             "    return Math.floor(Math.random() * length);\n" +
                             "}\n" +
+                            "if(entity.descricao !== null){\n" +
+                            "        entity.descricao = generateRandomText(generateRandomNumber(entity.descricao.length));\n" +
+                            "    }",
+                            "\n",
+                            "if(entity.nome !== null){\n" +
+                                    "        entity.nome = generateRandomText(generateRandomNumber(entity.nome.length));\n" +
+                                    "    }",
                             "\n" +
                             "function formatterPrimaryKey(entity){\n" +
-                            "    if(typeof entity."+primaryKeyName+" == 'number'){\n" +
-                            "        entity."+primaryKeyName+" = generateRandomText(generateRandomNumber(entity."+primaryKeyName+".length));\n" +
+                            "    if(typeof entity." + primaryKeyName + " == 'number'){\n" +
+                            "        entity." + primaryKeyName + " = generateRandomText(generateRandomNumber(entity." + primaryKeyName + ".length));\n" +
                             "        console.log(\"Is not a number.\");\n" +
                             "    }",
-                            "    return entity;\n" +
+                    "    return entity;\n" +
                             "}\n" +
                             "\n" +
                             "pm.environment.set('dynamicBody', formatterPrimaryKey(responseBody));\n" +
@@ -270,8 +277,8 @@ public class IntegrationFileWriter {
                     "pm.test(\"Status code is 200\", function () {",
                     "    pm.response.to.have.status(200);",
                     "});",
-                    "pm.test(\"Response time is less than "+serverConfig.getTimeOutRequest()+"ms\", function () {",
-                    "    pm.expect(pm.response.responseTime).to.be.below("+serverConfig.getTimeOutRequest()+");",
+                    "pm.test(\"Response time is less than " + serverConfig.getTimeOutRequest() + "ms\", function () {",
+                    "    pm.expect(pm.response.responseTime).to.be.below(" + serverConfig.getTimeOutRequest() + ");",
                     "});",
                     "pm.environment.set(\"id\", pm.response.json());"
             ));
@@ -350,10 +357,10 @@ public class IntegrationFileWriter {
     }
 
     public static File getJsonFile() throws Exception {
-        try{
+        try {
             return new File("src/main/java/file_input/input.json");
         } catch (Exception e) {
-            throw new Exception("Ocorreu um erro ao obter o arquivo de input.json. "+e.getMessage());
+            throw new Exception("Ocorreu um erro ao obter o arquivo de input.json. " + e.getMessage());
         }
     }
 }

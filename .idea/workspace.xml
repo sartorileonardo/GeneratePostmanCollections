@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e6707e41-9e13-4baa-b471-40f8bd6ca43f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/IntegrationFileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/IntegrationFileWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/file_input/input.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/file_input/input.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/file_output/collection_postman_test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/file_output/collection_postman_test.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +33,7 @@
   <component name="ProjectId" id="1anuo8VmjmkoKdMSfFj2EVWoOeN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../backendgenerator/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/img" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
