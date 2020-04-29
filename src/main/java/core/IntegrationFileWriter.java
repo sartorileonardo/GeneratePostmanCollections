@@ -250,21 +250,21 @@ public class IntegrationFileWriter {
                             "\n" +
                             "function generateRandomNumber(length){\n" +
                             "    return Math.floor(Math.random() * length);\n" +
-                            "}\n" +
-                            "if(entity.descricao !== null){\n" +
-                            "        entity.descricao = generateRandomText(generateRandomNumber(entity.descricao.length));\n" +
-                            "    }",
-                            "\n",
-                            "if(entity.nome !== null){\n" +
-                                    "        entity.nome = generateRandomText(generateRandomNumber(entity.nome.length));\n" +
-                                    "    }",
+                            "}" +
                             "\n" +
                             "function formatterPrimaryKey(entity){\n" +
                             "    if(typeof entity." + primaryKeyName + " == 'number'){\n" +
                             "        entity." + primaryKeyName + " = generateRandomText(generateRandomNumber(entity." + primaryKeyName + ".length));\n" +
                             "        console.log(\"Is not a number.\");\n" +
                             "    }",
-                    "    return entity;\n" +
+                            "if(entity.descricao !== null){\n" +
+                            "        entity.descricao = generateRandomText(generateRandomNumber(2));\n" +
+                            "    }",
+                            "\n",
+                            "if(entity.nome !== null){\n" +
+                            "        entity.nome = generateRandomText(generateRandomNumber(2));\n" +
+                            "    }",
+                            "   return entity;\n" +
                             "}\n" +
                             "\n" +
                             "pm.environment.set('dynamicBody', formatterPrimaryKey(responseBody));\n" +

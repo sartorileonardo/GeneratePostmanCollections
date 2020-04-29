@@ -6,6 +6,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/core/IntegrationFileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/IntegrationFileWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/file_input/input.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/file_input/input.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/file_output/collection_postman_test.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/file_output/collection_postman_test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testeintegracaogenerator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/testeintegracaogenerator.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +34,7 @@
   <component name="ProjectId" id="1anuo8VmjmkoKdMSfFj2EVWoOeN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -42,6 +43,7 @@
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/img" />
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
