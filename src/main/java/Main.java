@@ -13,9 +13,7 @@ import java.util.Map;
 public class Main {
 
     public static void main(String[] args) throws Exception {
-
-        ObjectMapper objectMapper = new ObjectMapper();
-        Map<String, Object> mapObject = objectMapper.readValue(IntegrationFileWriter.getJsonFile(), new TypeReference<Map<String, Object>>() {});
+        Map<String, Object> mapObject = ParseUtils.getInstanceObjectMapper().readValue(IntegrationFileWriter.getJsonFile(), new TypeReference<Map<String, Object>>() {});
         TestIntegrationVO testIntegrationVO = ParseUtils.getMapToTestIntegrationVO(mapObject);
         IntegrationFileWriter.writeJSON(IntegrationFileWriter.generateTestIntegration(testIntegrationVO.getEntities(), testIntegrationVO.getServerConfigVO()), "src/main/java/file_output/", "collection_postman_test.json");
     }

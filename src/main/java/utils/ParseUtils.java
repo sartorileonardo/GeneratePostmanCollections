@@ -1,18 +1,13 @@
 package utils;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import model.EntityConfigVO;
 import model.ServerApplicationConfigVO;
 import model.TestIntegrationVO;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.math.BigDecimal;
-import java.sql.Date;
-import java.sql.*;
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Lucas Fernando Frighetto
@@ -49,5 +44,9 @@ public class ParseUtils {
 
     }
 
+    public static ObjectMapper getInstanceObjectMapper() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        return objectMapper;
+    }
 }
 

@@ -107,7 +107,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/utils/ParseUtils.java</url>
-          <line>37</line>
+          <line>32</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
