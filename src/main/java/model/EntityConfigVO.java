@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Map;
-
 public class EntityConfigVO {
     private String entityName;
     private String pathName;
