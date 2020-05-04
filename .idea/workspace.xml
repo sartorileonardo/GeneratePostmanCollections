@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="testeintegracaogenerator.jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e6707e41-9e13-4baa-b471-40f8bd6ca43f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
