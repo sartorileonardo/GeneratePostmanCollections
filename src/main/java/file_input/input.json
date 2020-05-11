@@ -2,49 +2,24 @@
 
   "serverConfigVO":{
     "ip":"localhost",
-    "port":8081,
-    "defaultPath":"/kwscontrole/erpweb",
-    "erkUsuario":83688,
-    "erkFilial":18,
+    "port":8080,
+    "defaultPath":"/controller/erpweb",
+    "usuario":"<YOUR_USER_CODE>",
+    "filial":"<YOUR_STORE_CODE>",
     "timeOutRequest":5000
   },
 
   "entities":[
 
       {
-        "entityName":"Gerenciais",
-        "pathName":"gerenciais",
-        "primaryKeyName":"codigo"
+        "entityName":"Client",
+        "pathName":"clients",
+        "primaryKeyName":"id"
       },
       {
-        "entityName":"Telas",
-        "pathName":"telas",
-        "primaryKeyName":"codigo"
-      },
-      {
-        "entityName":"Scripts",
-        "pathName":"scripts",
-        "primaryKeyName":"numero"
-      },
-      {
-        "entityName":"AgrupadoresTiposPlanos",
-        "pathName":"agrupadorestiposplanos",
-        "primaryKeyName":"codigo"
-      },
-      {
-        "entityName":"Cards",
-        "pathName":"cards",
-        "primaryKeyName":"codigo"
-      },
-      {
-        "entityName":"FrequenciasEntregas",
-        "pathName":"frequenciasentregas",
-        "primaryKeyName":"codigo"
-      },
-      {
-        "entityName":"Impressoras",
-        "pathName":"impressoras",
-        "primaryKeyName":"codigo"
+        "entityName":"Staff",
+        "pathName":"staffs",
+        "primaryKeyName":"id"
       }
 
   ]

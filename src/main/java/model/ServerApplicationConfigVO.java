@@ -4,17 +4,17 @@ public class ServerApplicationConfigVO {
     private String ip;
     private Integer port;
     private String defaultPath;
-    private Integer erkUsuario;
-    private Integer erkFilial;
+    private Integer usuario;
+    private Integer filial;
     private Integer timeOutRequest;
 
 
-    public ServerApplicationConfigVO(String ip, Integer port, String defaultPath, Integer erkUsuario, Integer erkFilial, Integer timeOutRequest) {
+    public ServerApplicationConfigVO(String ip, Integer port, String defaultPath, Integer usuario, Integer filial, Integer timeOutRequest) {
         this.ip = ip;
         this.port = port;
         this.defaultPath = defaultPath;
-        this.erkUsuario = erkUsuario;
-        this.erkFilial = erkFilial;
+        this.usuario = usuario;
+        this.filial = filial;
         this.timeOutRequest = timeOutRequest;
     }
 
@@ -42,20 +42,20 @@ public class ServerApplicationConfigVO {
         this.defaultPath = defaultPath;
     }
 
-    public Integer getErkUsuario() {
-        return erkUsuario;
+    public Integer getusuario() {
+        return usuario;
     }
 
-    public void setErkUsuario(Integer erkUsuario) {
-        this.erkUsuario = erkUsuario;
+    public void setusuario(Integer usuario) {
+        this.usuario = usuario;
     }
 
-    public Integer getErkFilial() {
-        return erkFilial;
+    public Integer getfilial() {
+        return filial;
     }
 
-    public void setErkFilial(Integer erkFilial) {
-        this.erkFilial = erkFilial;
+    public void setfilial(Integer filial) {
+        this.filial = filial;
     }
 
     public Integer getTimeOutRequest() {

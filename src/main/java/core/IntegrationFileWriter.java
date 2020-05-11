@@ -13,6 +13,8 @@ import java.util.*;
 
 public class IntegrationFileWriter {
 
+    private static final String POSTMAN_VERSION_API = "https://schema.getpostman.com/json/collection/v2.1.0/collection.json";
+
     private static String generateId() {
         StringBuilder sb = new StringBuilder();
         sb.append(Math.abs(getRandom().nextLong()) + "-" + Math.abs(getRandom().nextFloat()) + "-" + Math.abs(getRandom().nextInt()));
@@ -29,7 +31,7 @@ public class IntegrationFileWriter {
         info.put("_postman_id", generateId());
         info.put("name", "Registers");
         info.put("description", "My Registers (CRUD)");
-        info.put("schema", "https://schema.getpostman.com/json/collection/v2.1.0/collection.json");
+        info.put("schema", POSTMAN_VERSION_API);
 
         return info;
     }
@@ -67,17 +69,17 @@ public class IntegrationFileWriter {
         default_server_config.put("value", "http://" + serverConfig.getIp() + ":" + serverConfig.getPort() + serverConfig.getDefaultPath());
         default_server_config.put("type", "string");
 
-        Map<String, Object> erkFilial = new LinkedHashMap<String, Object>();
-        erkFilial.put("id", generateId());
-        erkFilial.put("key", "erkfilial");
-        erkFilial.put("value", serverConfig.getErkFilial());
-        erkFilial.put("type", "string");
+        Map<String, Object> filial = new LinkedHashMap<String, Object>();
+        filial.put("id", generateId());
+        filial.put("key", "filial");
+        filial.put("value", serverConfig.getfilial());
+        filial.put("type", "string");
 
-        Map<String, Object> erkUsuario = new LinkedHashMap<String, Object>();
-        erkUsuario.put("id", generateId());
-        erkUsuario.put("key", "erkusuario");
-        erkUsuario.put("value", serverConfig.getErkUsuario());
-        erkUsuario.put("type", "string");
+        Map<String, Object> usuario = new LinkedHashMap<String, Object>();
+        usuario.put("id", generateId());
+        usuario.put("key", "usuario");
+        usuario.put("value", serverConfig.getusuario());
+        usuario.put("type", "string");
 
 
         Map<String, Object> idEntity = new LinkedHashMap<String, Object>();
@@ -86,7 +88,7 @@ public class IntegrationFileWriter {
         idEntity.put("value", "");
         idEntity.put("type", "string");
 
-        List<Map<String, Object>> variables = Arrays.asList(default_server_config, erkUsuario, erkFilial, idEntity);
+        List<Map<String, Object>> variables = Arrays.asList(default_server_config, usuario, filial, idEntity);
 
         return variables;
     }
@@ -140,8 +142,8 @@ public class IntegrationFileWriter {
         request.put("method", verb);
         request.put("description", operation + " - " + entity.getEntityName());
         request.put("header", Arrays.asList(
-                generateHeaderFromRequest("erkfilial", "text", "{{erkfilial}}"),
-                generateHeaderFromRequest("erkusuario", "text", "{{erkusuario}}"),
+                generateHeaderFromRequest("filial", "text", "{{filial}}"),
+                generateHeaderFromRequest("usuario", "text", "{{usuario}}"),
                 generateHeaderFromRequest("Content-Type", "text", "application/json")
         ));
         request.put("url", generateURL("{{default_server_config}}/" + entity.getPathName() + "/", "{{default_server_config}}", "", entity.getPathName(), verb, operation));

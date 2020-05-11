@@ -25,8 +25,8 @@ public class ParseUtils {
                     (String) serverConfigMap.get("ip"),
                     (Integer) serverConfigMap.get("port"),
                     (String) serverConfigMap.get("defaultPath"),
-                    (Integer) serverConfigMap.get("erkUsuario"),
-                    (Integer) serverConfigMap.get("erkFilial"),
+                    (Integer) serverConfigMap.get("usuario"),
+                    (Integer) serverConfigMap.get("filial"),
                     (Integer) serverConfigMap.get("timeOutRequest")
             );
 
